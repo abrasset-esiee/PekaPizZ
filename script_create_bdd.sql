@@ -1,3 +1,6 @@
+CREATE DATABASE Pekapizz;
+USE Pekapizz;
+
 CREATE TABLE IF NOT EXISTS Taille(
    id_taille INT,
    ratio DECIMAL(15,2),
@@ -13,7 +16,7 @@ CREATE TABLE IF NOT EXISTS Ingredient(
 );
 
 
-CREATE TABLE  IF NOT EXISTS Véhicule(
+CREATE TABLE  IF NOT EXISTS Vehicule(
    immatriculation CHAR(9),
    voiture tinyint(1),
    couleur VARCHAR(50),
