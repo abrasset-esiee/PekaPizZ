@@ -2,14 +2,14 @@ CREATE DATABASE Pekapizz;
 USE Pekapizz;
 
 CREATE TABLE IF NOT EXISTS Taille(
-   id_taille INT,
+   id_taille INT AUTO INCREMENT,
    ratio DECIMAL(15,2),
    PRIMARY KEY(id_taille)
 );
 
 
 CREATE TABLE IF NOT EXISTS Ingredient(
-   id_ingredient INT,
+   id_ingredient INT AUTO INCREMENT,
    nom VARCHAR(50),
    provenance VARCHAR(50),
    PRIMARY KEY(id_ingredient)
@@ -27,7 +27,7 @@ CREATE TABLE  IF NOT EXISTS Vehicule(
 
 
 CREATE TABLE  IF NOT EXISTS Pizza(
-   id_pizza VARCHAR(50),
+   id_pizza VARCHAR(50) AUTO INCREMENT,
    nom VARCHAR(50),
    prix_base DECIMAL(2,2),
    PRIMARY KEY(id_pizza)
@@ -43,7 +43,7 @@ CREATE TABLE  IF NOT EXISTS Livreur(
 
 
 CREATE TABLE  IF NOT EXISTS Adresse(
-   id_adresse INT,
+   id_adresse INT AUTO INCREMENT,
    Numero_rue VARCHAR(5),
    nom_rue VARCHAR(50),
    code_postal CHAR(5),
@@ -53,7 +53,7 @@ CREATE TABLE  IF NOT EXISTS Adresse(
 
 
 CREATE TABLE IF NOT EXISTS  Client(
-   id_client INT,
+   id_client INT AUTO INCREMENT,
    nom VARCHAR(50),
    prenom VARCHAR(50),
    solde DECIMAL(5,2),
@@ -82,7 +82,7 @@ CREATE TABLE  IF NOT EXISTS Livraison(
 
 
 CREATE TABLE  IF NOT EXISTS Composition(
-   id_ingredient INT,
+   id_ingredient INT AUTO INCREMENT,
    id_pizza VARCHAR(50),
    PRIMARY KEY(id_ingredient, id_pizza),
    FOREIGN KEY(id_ingredient) REFERENCES Ingredient(id_ingredient),
