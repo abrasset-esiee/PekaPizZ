@@ -5,5 +5,5 @@ Pizza = (id_pizza VARCHAR(50), nom VARCHAR(50), prix_base DECIMAL(2,2));
 Livreur = (id_livreur VARCHAR(50), nom VARCHAR(50), prenom VARCHAR(50));
 Adresse = (id_adresse INT, Numero_rue VARCHAR(5), nom_rue VARCHAR(50), code_postal CHAR(5), ville VARCHAR(50));
 Client = (id_client INT, nom VARCHAR(50), prenom VARCHAR(50), solde DECIMAL(5,2), #id_adresse);
-Livraison = (id_livraison INT,#id_livreur, #id_pizza, #immatriculation, #id_taille, #id_client, date_livraison DATETIME, date_reception DATETIME);
+Livraison = (id_livraison INT, date_livraison DATETIME, date_reception DATETIME, #id_livreur, #id_pizza, #immatriculation, #id_taille, #id_client);
 Composition = (#id_ingredient, #id_pizza);
