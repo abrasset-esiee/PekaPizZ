@@ -27,7 +27,7 @@ CREATE TABLE  IF NOT EXISTS Vehicule(
 
 
 CREATE TABLE  IF NOT EXISTS Pizza(
-   id_pizza VARCHAR(50) AUTO_INCREMENT,
+   id_pizza INT AUTO_INCREMENT,
    nom VARCHAR(50),
    prix_base DECIMAL(2,2),
    PRIMARY KEY(id_pizza)
@@ -35,7 +35,7 @@ CREATE TABLE  IF NOT EXISTS Pizza(
 
 
 CREATE TABLE  IF NOT EXISTS Livreur(
-   id_livreur VARCHAR(50),
+   id_livreur INT AUTO_INCREMENT,
    nom VARCHAR(50),
    prenom VARCHAR(50),
    PRIMARY KEY(id_livreur)
