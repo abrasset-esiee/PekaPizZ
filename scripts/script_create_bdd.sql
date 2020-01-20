@@ -64,19 +64,20 @@ CREATE TABLE IF NOT EXISTS  Client(
 
 
 CREATE TABLE  IF NOT EXISTS Livraison(
-   id_client INT,
-   id_taille INT,
-   immatriculation CHAR(9),
-   id_pizza VARCHAR(50),
    id_livreur VARCHAR(50),
+   id_pizza VARCHAR(50),
+   immatriculation CHAR(9),
+   id_taille INT,
+   id_client INT,
+   id_livraison COUNTER,
    date_livraison DATETIME,
    date_reception DATETIME,
-   PRIMARY KEY(id_client, id_taille, immatriculation, id_pizza, id_livreur),
-   FOREIGN KEY(id_client) REFERENCES Client(id_client),
-   FOREIGN KEY(id_taille) REFERENCES Taille(id_taille),
-   FOREIGN KEY(immatriculation) REFERENCES Véhicule(immatriculation),
+   PRIMARY KEY(id_livreur, id_pizza, immatriculation, id_taille, id_client, id_livraison),
+   FOREIGN KEY(id_livreur) REFERENCES Livreur(id_livreur),
    FOREIGN KEY(id_pizza) REFERENCES Pizza(id_pizza),
-   FOREIGN KEY(id_livreur) REFERENCES Livreur(id_livreur)
+   FOREIGN KEY(immatriculation) REFERENCES Véhicule(immatriculation),
+   FOREIGN KEY(id_taille) REFERENCES Taille(id_taille),
+   FOREIGN KEY(id_client) REFERENCES Client(id_client)
 );
 
 
