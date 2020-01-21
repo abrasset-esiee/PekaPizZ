@@ -70,8 +70,8 @@ CREATE TABLE  IF NOT EXISTS Livraison(
    immatriculation CHAR(9),
    id_taille INT,
    id_client INT,
+   date_command DATETIME,
    date_livraison DATETIME,
-   date_reception DATETIME,
    PRIMARY KEY(id_livraison),
    FOREIGN KEY(id_livreur) REFERENCES Livreur(id_livreur),
    FOREIGN KEY(id_pizza) REFERENCES Pizza(id_pizza),
@@ -82,8 +82,8 @@ CREATE TABLE  IF NOT EXISTS Livraison(
 
 
 CREATE TABLE  IF NOT EXISTS Composition(
-   id_ingredient INT AUTO_INCREMENT,
-   id_pizza VARCHAR(50),
+   id_ingredient INT,
+   id_pizza INT,
    PRIMARY KEY(id_ingredient, id_pizza),
    FOREIGN KEY(id_ingredient) REFERENCES Ingredient(id_ingredient),
    FOREIGN KEY(id_pizza) REFERENCES Pizza(id_pizza)
