@@ -70,7 +70,7 @@ CREATE TABLE  IF NOT EXISTS Livraison(
    immatriculation CHAR(9),
    id_taille INT,
    id_client INT,
-   date_command DATETIME,
+   date_commande DATETIME,
    date_livraison DATETIME,
    PRIMARY KEY(id_livraison),
    FOREIGN KEY(id_livreur) REFERENCES Livreur(id_livreur),
