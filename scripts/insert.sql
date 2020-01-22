@@ -12,6 +12,7 @@ VALUES
 
 INSERT INTO composition (id_pizza, id_ingredient)
 VALUES
+(1,6),
 (1,5),
 (1,3),
 (1,2),
@@ -23,6 +24,7 @@ VALUES
 (2,3),
 
 (3,1),
+(3,9),
 (3,2),
 (3,6),
 (3,7),
@@ -49,11 +51,11 @@ VALUES
 ('Poivrons', 'Argentine'),
 ('Champignons', 'France');
 
-INSERT INTO livraison(id_livreur, id_pizza, immatriculation, id_taille, id_client, date_livraison, date_reception)
+INSERT INTO livraison(id_livreur, id_pizza, immatriculation, id_taille, id_client, date_commande, date_livraison)
 VALUES
-(1, 3, 'ABR65BX5T', 2, 3, '20/01/2020 18:12:32', '20/01/2020 20:00:00'),
-(2, 1, '65QHNT56X', 3, 1, '14/01/2020 15:25:59', '15/01/2020 13:45:00'),
-(3, 4, '10CFQ45MJ', 1, 2, '01/01/2020 00:00:01', '02/01/2020 07:30:00');
+(1, 3, 'ABR65BX5T', 2, 3, TIMESTAMP '2020-01-20 18:12:32', TIMESTAMP '2020-01-20 20:00:00'),
+(2, 1, '65QHNT56X', 3, 1, TIMESTAMP '2019-01-11 15:25:59', TIMESTAMP '2020-01-15 13:45:00'),
+(3, 4, '10CFQ45MJ', 1, 2, TIMESTAMP '2020-01-01 00:00:01', TIMESTAMP '2020-02-01 07:30:00');
 
 INSERT INTO livreur(nom, prenom)
 VALUES
