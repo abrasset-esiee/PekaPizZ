@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListCell?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!-- <fx:root type="javafx.scene.control.ListCell" xmlns="http://javafx.com/javafx/8" 
+	xmlns:fx="http://javafx.com/fxml/1"> <graphic> -->
+<!-- </graphic> </fx:root> -->
+
+
+<fx:root fx:id="pizz_cell" onMouseClicked="#onClickCell"
+	type="javafx.scene.control.ListCell" xmlns="http://javafx.com/javafx/8.0.172-ea"
+	xmlns:fx="http://javafx.com/fxml/1">
+	<graphic>
+		<Pane>
+			<children>
+				<GridPane layoutX="65.0" layoutY="65.0">
+					<fx:include fx:id="pizza_elem" source="pizz_element_inside.fxml" />
+					<columnConstraints>
+						<ColumnConstraints halignment="LEFT" hgrow="SOMETIMES"
+							minWidth="10.0" />
+						<ColumnConstraints halignment="LEFT" hgrow="SOMETIMES"
+							minWidth="10.0" />
+						<ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES"
+							minWidth="10.0" />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					</rowConstraints>
+					<children>
+						<Group fx:id="pizz_icon" cache="true">
+							<children>
+								<Circle fill="#b28538" radius="65.0" stroke="BLACK"
+									strokeType="INSIDE" />
+								<Group fx:id="pizz_back">
+									<children>
+										<Circle fill="#a40707" radius="59.0" stroke="BLACK"
+											strokeType="INSIDE" />
+									</children>
+								</Group>
+								<Group fx:id="pizz_mozarella">
+									<children>
+										<Circle layoutX="-37.0" radius="14.0" stroke="BLACK"
+											strokeType="INSIDE">
+											<fill>
+												<RadialGradient centerX="0.5" centerY="0.5"
+													radius="0.5">
+													<stops>
+														<Stop color="#e8e8e8" />
+														<Stop color="WHITE" offset="1.0" />
+													</stops>
+												</RadialGradient>
+											</fill>
+										</Circle>
+										<Circle layoutX="40.0" radius="14.0" stroke="BLACK"
+											strokeType="INSIDE">
+											<fill>
+												<RadialGradient centerX="0.5" centerY="0.5"
+													radius="0.5">
+													<stops>
+														<Stop color="#e8e8e8" />
+														<Stop color="WHITE" offset="1.0" />
+													</stops>
+												</RadialGradient>
+											</fill>
+										</Circle>
+										<Circle layoutY="37.0" radius="14.0" stroke="BLACK"
+											strokeType="INSIDE">
+											<fill>
+												<RadialGradient centerX="0.5" centerY="0.5"
+													radius="0.5">
+													<stops>
+														<Stop color="#e8e8e8" />
+														<Stop color="WHITE" offset="1.0" />
+													</stops>
+												</RadialGradient>
+											</fill>
+										</Circle>
+										<Circle layoutY="-37.0" radius="14.0" rotate="49.0"
+											stroke="BLACK" strokeType="INSIDE">
+											<fill>
+												<RadialGradient centerX="0.5" centerY="0.5"
+													radius="0.5">
+													<stops>
+														<Stop color="#e8e8e8" />
+														<Stop color="WHITE" offset="1.0" />
+													</stops>
+												</RadialGradient>
+											</fill>
+										</Circle>
+									</children>
+								</Group>
+								<Group fx:id="pizz_olive">
+									<children>
+										<Ellipse fill="#393939" layoutX="14.0" layoutY="-14.0"
+											radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+										<Ellipse fill="#393939" layoutX="-23.0" layoutY="28.0"
+											radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+										<Ellipse fill="#393939" layoutX="-23.0" layoutY="-23.0"
+											radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+										<Ellipse fill="#393939" layoutX="26.0" layoutY="-37.0"
+											radiusX="2.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+										<Ellipse fill="#393939" layoutX="30.0" layoutY="28.0"
+											radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+										<Ellipse fill="#393939" layoutX="-14.0" layoutY="14.0"
+											radiusX="2.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+									</children>
+								</Group>
+								<Group fx:id="pizz_egg" layoutX="-286.0" layoutY="-84.0">
+									<children>
+										<Circle fill="WHITE" layoutX="286.0" layoutY="85.0"
+											radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+										<Circle fill="#ffd21f" layoutX="286.0" layoutY="85.0"
+											radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+									</children>
+								</Group>
+								<Group fx:id="pizz_poivron">
+									<children>
+										<Arc fill="#19941f" layoutX="30.0" layoutY="20.0" length="270.0"
+											radiusX="5.0" radiusY="11.0" startAngle="45.0" stroke="BLACK"
+											strokeType="INSIDE" type="ROUND" />
+										<Arc fill="#19941f" layoutX="40.0" layoutY="-20.0" length="270.0"
+											radiusX="5.0" radiusY="11.0" rotate="-80.5" startAngle="45.0"
+											stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+										<Arc fill="#19941f" layoutX="-25.0" layoutY="23.0" length="270.0"
+											radiusX="5.0" radiusY="11.0" rotate="65.6" startAngle="80.5"
+											stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+										<Arc fill="#19941f" layoutX="-22.0" layoutY="-10.0"
+											length="270.0" radiusX="5.0" radiusY="11.0" startAngle="164.7"
+											stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+									</children>
+								</Group>
+							</children>
+							<cursor>
+								<Cursor fx:constant="OPEN_HAND" />
+							</cursor>
+						</Group>
+						<HBox alignment="CENTER_LEFT" GridPane.columnIndex="1">
+							<children>
+								<VBox alignment="CENTER_LEFT" prefHeight="83.0" prefWidth="272.0">
+									<children>
+										<Text fx:id="pizz_name" layoutX="140.0" layoutY="75.0"
+											strokeType="OUTSIDE" strokeWidth="0.0" text="NAME OF THE PIZZA"
+											underline="true" wrappingWidth="271.13671875">
+											<font>
+												<Font name="System Bold" size="21.0" />
+											</font>
+										</Text>
+										<Text fx:id="pizz_ingredients" fill="#727070" layoutX="212.0"
+											layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0"
+											text="INGREDIENTS, INGREDIENTS, INGREDIENT, INGREDIENT, INGREDIENTS"
+											wrappingWidth="271.13671875">
+											<font>
+												<Font size="20.0" />
+											</font>
+										</Text>
+									</children>
+								</VBox>
+							</children>
+						</HBox>
+						<Label fx:id="pizz_prix" alignment="CENTER_RIGHT" text="Label"
+							GridPane.columnIndex="2">
+							<font>
+								<Font size="23.0" />
+							</font>
+						</Label>
+					</children>
+				</GridPane>
+			</children>
+		</Pane>
+
+	</graphic>
+</fx:root>

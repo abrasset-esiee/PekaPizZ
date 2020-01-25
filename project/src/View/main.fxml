@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER"
+	style="-fx-background-color: rgba(0,0,0,.7);" xmlns="http://javafx.com/javafx/8.0.172-ea"
+	fx:controller="controller.Controller">
+	<children>
+		<HBox alignment="CENTER">
+			<children>
+				<Pane stylesheets="@../styles/style.css">
+					<children>
+						<Button fx:id="manager_mode" layoutX="660.0" layoutY="602.0"
+							mnemonicParsing="false" prefHeight="51.0" prefWidth="119.0"
+							style="-fx-background-color: null;" text="Manager">
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</Button>
+						<Button fx:id="ask_connect" graphicTextGap="5.0" layoutX="191.0"
+							layoutY="426.0" mnemonicParsing="false" onAction="#setScene_signin"
+							styleClass="command" text="SE CONNECTER" textAlignment="CENTER">
+							<font>
+								<Font size="48.0" />
+							</font>
+							<opaqueInsets>
+								<Insets />
+							</opaqueInsets>
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+							<textFill>
+								<LinearGradient endX="0.5095238095238096" endY="1.0"
+									startX="0.5047619047619049" startY="0.4285714285714286">
+									<stops>
+										<Stop color="#ff8a00" />
+										<Stop color="RED" offset="1.0" />
+									</stops>
+								</LinearGradient>
+							</textFill>
+						</Button>
+						<Group fx:id="pizza_icon" cache="true" layoutX="382.0"
+							layoutY="132.0" onMouseClicked="#pizzaClicked" onMouseDragOver="#pizzaClicked"
+							scaleX="2.0" scaleY="2.0">
+							<children>
+								<Circle fill="#b28538" radius="65.0" stroke="BLACK"
+									strokeType="INSIDE" />
+								<Circle fill="#a40707" radius="59.0" stroke="BLACK"
+									strokeType="INSIDE" />
+								<Circle fill="#c5d7e8" layoutY="-37.0" radius="14.0"
+									rotate="49.0" stroke="BLACK" strokeType="INSIDE" />
+								<Circle fill="#c5d7e8" layoutX="-37.0" radius="14.0"
+									stroke="BLACK" strokeType="INSIDE" />
+								<Circle fill="#c5d7e8" layoutY="37.0" radius="14.0"
+									stroke="BLACK" strokeType="INSIDE" />
+								<Ellipse fill="#393939" layoutX="-23.0" layoutY="28.0"
+									radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+								<Ellipse fill="#393939" layoutX="-23.0" layoutY="-23.0"
+									radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+								<Ellipse fill="#393939" layoutX="26.0" layoutY="-37.0"
+									radiusX="2.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+								<Ellipse fill="#393939" layoutX="30.0" layoutY="28.0"
+									radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+								<Ellipse fill="#393939" layoutX="14.0" layoutY="-14.0"
+									radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+								<Ellipse fill="#393939" layoutX="-14.0" layoutY="14.0"
+									radiusX="2.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+								<Circle fill="#c5d7e8" layoutX="40.0" radius="14.0"
+									stroke="BLACK" strokeType="INSIDE" />
+							</children>
+							<cursor>
+								<Cursor fx:constant="WAIT" />
+							</cursor>
+						</Group>
+						<Text blendMode="SRC_ATOP" layoutX="29.0" layoutY="294.0"
+							stroke="BLACK" strokeType="OUTSIDE" text="PEKAPIZZ"
+							textAlignment="CENTER" underline="true" wrappingWidth="705.63671875">
+							<font>
+								<Font size="150.0" />
+							</font>
+							<fill>
+								<LinearGradient endX="1.0" endY="0.5095238095238095"
+									startY="0.4904761904761905">
+									<stops>
+										<Stop color="#35ae2c" />
+										<Stop color="WHITE" offset="0.5137259548919697" />
+										<Stop color="RED" offset="1.0" />
+									</stops>
+								</LinearGradient>
+							</fill>
+							<effect>
+								<Bloom />
+							</effect>
+						</Text>
+					</children>
+				</Pane>
+			</children>
+		</HBox>
+	</children>
+</VBox>

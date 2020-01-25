@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.Text?>
+<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+	<children>
+		<Group fx:id="pizza_icon" cache="true" layoutX="65.0" layoutY="65.0"
+			scaleX="0.5" scaleY="0.5">
+			<children>
+				<Group fx:id="pizz_back">
+					<children>
+						<Circle fill="#b28538" radius="65.0" stroke="BLACK"
+							strokeType="INSIDE" />
+						<Circle fill="#a40707" radius="59.0" stroke="BLACK"
+							strokeType="INSIDE" />
+					</children>
+				</Group>
+				<Group fx:id="pizz_mozarella">
+					<children>
+						<Circle layoutX="-37.0" radius="14.0" stroke="BLACK"
+							strokeType="INSIDE">
+							<fill>
+								<RadialGradient centerX="0.5" centerY="0.5"
+									radius="0.5">
+									<stops>
+										<Stop color="#e8e8e8" />
+										<Stop color="WHITE" offset="1.0" />
+									</stops>
+								</RadialGradient>
+							</fill>
+						</Circle>
+						<Circle layoutX="40.0" radius="14.0" stroke="BLACK"
+							strokeType="INSIDE">
+							<fill>
+								<RadialGradient centerX="0.5" centerY="0.5"
+									radius="0.5">
+									<stops>
+										<Stop color="#e8e8e8" />
+										<Stop color="WHITE" offset="1.0" />
+									</stops>
+								</RadialGradient>
+							</fill>
+						</Circle>
+						<Circle layoutY="37.0" radius="14.0" stroke="BLACK"
+							strokeType="INSIDE">
+							<fill>
+								<RadialGradient centerX="0.5" centerY="0.5"
+									radius="0.5">
+									<stops>
+										<Stop color="#e8e8e8" />
+										<Stop color="WHITE" offset="1.0" />
+									</stops>
+								</RadialGradient>
+							</fill>
+						</Circle>
+						<Circle layoutY="-37.0" radius="14.0" rotate="49.0" stroke="BLACK"
+							strokeType="INSIDE">
+							<fill>
+								<RadialGradient centerX="0.5" centerY="0.5"
+									radius="0.5">
+									<stops>
+										<Stop color="#e8e8e8" />
+										<Stop color="WHITE" offset="1.0" />
+									</stops>
+								</RadialGradient>
+							</fill>
+						</Circle>
+					</children>
+				</Group>
+				<Group fx:id="pizz_olive">
+					<children>
+						<Ellipse fill="#393939" layoutX="14.0" layoutY="-14.0"
+							radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+						<Ellipse fill="#393939" layoutX="-23.0" layoutY="28.0"
+							radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+						<Ellipse fill="#393939" layoutX="-23.0" layoutY="-23.0"
+							radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+						<Ellipse fill="#393939" layoutX="26.0" layoutY="-37.0"
+							radiusX="2.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+						<Ellipse fill="#393939" layoutX="30.0" layoutY="28.0"
+							radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+						<Ellipse fill="#393939" layoutX="-14.0" layoutY="14.0"
+							radiusX="2.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+					</children>
+				</Group>
+				<Group fx:id="pizz_poivron">
+					<children>
+						<Arc fill="#19941f" layoutX="30.0" layoutY="20.0" length="270.0"
+							radiusX="5.0" radiusY="11.0" startAngle="45.0" stroke="BLACK"
+							strokeType="INSIDE" type="ROUND" />
+						<Arc fill="#19941f" layoutX="40.0" layoutY="-20.0" length="270.0"
+							radiusX="5.0" radiusY="11.0" rotate="-80.5" startAngle="45.0"
+							stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+						<Arc fill="#19941f" layoutX="-25.0" layoutY="23.0" length="270.0"
+							radiusX="5.0" radiusY="11.0" rotate="65.6" startAngle="80.5"
+							stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+						<Arc fill="#19941f" layoutX="-22.0" layoutY="-10.0" length="270.0"
+							radiusX="5.0" radiusY="11.0" startAngle="164.7" stroke="BLACK"
+							strokeType="INSIDE" type="ROUND" />
+						<Group fx:id="pizz_egg" layoutX="-286.0" layoutY="-82.0">
+							<children>
+								<Circle fill="WHITE" layoutX="286.0" layoutY="85.0"
+									radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+								<Circle fill="#ffd21f" layoutX="286.0" layoutY="85.0"
+									radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+							</children>
+						</Group>
+					</children>
+				</Group>
+			</children>
+			<cursor>
+				<Cursor fx:constant="OPEN_HAND" />
+			</cursor>
+		</Group>
+		<RadioButton layoutX="111.0" layoutY="57.0"
+			mnemonicParsing="false" text="RadioButton" />
+		<Text layoutX="212.0" layoutY="70.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="()" wrappingWidth="271.13671875" />
+	</children>
+</Pane>

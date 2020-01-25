@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="rootwindow" alignment="CENTER"
+	style="-fx-background-color: rgba(0,0,0,.7);" xmlns="http://javafx.com/javafx/8.0.172-ea"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+	<children>
+		<HBox alignment="CENTER">
+			<children>
+				<Pane prefHeight="567.0" prefWidth="599.0" stylesheets="@../styles/style.css">
+					<children>
+						<Group fx:id="pizza_icon" cache="true" layoutX="300.0"
+							layoutY="94.0">
+							<children>
+								<Circle fill="#b28538" radius="65.0" stroke="BLACK"
+									strokeType="INSIDE" />
+								<Circle fill="#a40707" radius="59.0" stroke="BLACK"
+									strokeType="INSIDE" />
+								<Circle fill="#c5d7e8" layoutY="-37.0" radius="14.0"
+									rotate="49.0" stroke="BLACK" strokeType="INSIDE" />
+								<Circle fill="#c5d7e8" layoutX="-37.0" radius="14.0"
+									stroke="BLACK" strokeType="INSIDE" />
+								<Circle fill="#c5d7e8" layoutX="40.0" radius="14.0"
+									stroke="BLACK" strokeType="INSIDE" />
+								<Circle fill="#c5d7e8" layoutY="37.0" radius="14.0"
+									stroke="BLACK" strokeType="INSIDE" />
+								<Ellipse fill="#393939" layoutX="-23.0" layoutY="28.0"
+									radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+								<Ellipse fill="#393939" layoutX="-23.0" layoutY="-23.0"
+									radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+								<Ellipse fill="#393939" layoutX="26.0" layoutY="-37.0"
+									radiusX="2.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+								<Ellipse fill="#393939" layoutX="30.0" layoutY="28.0"
+									radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+								<Ellipse fill="#393939" layoutX="14.0" layoutY="-14.0"
+									radiusX="6.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+								<Ellipse fill="#393939" layoutX="-14.0" layoutY="14.0"
+									radiusX="2.0" radiusY="3.0" stroke="BLACK" strokeType="INSIDE" />
+							</children>
+							<cursor>
+								<Cursor fx:constant="OPEN_HAND" />
+							</cursor>
+						</Group>
+						<Text layoutX="37.0" layoutY="188.0" stroke="BLACK"
+							strokeType="OUTSIDE" text="PEKAPIZZ" textAlignment="CENTER"
+							underline="true" wrappingWidth="525.13671875">
+							<font>
+								<Font size="73.0" />
+							</font>
+							<fill>
+								<LinearGradient endX="1.0" endY="0.5095238095238095"
+									startY="0.4904761904761905">
+									<stops>
+										<Stop color="#35ae2c" />
+										<Stop color="WHITE" offset="0.5137259548919697" />
+										<Stop color="RED" offset="1.0" />
+									</stops>
+								</LinearGradient>
+							</fill>
+							<effect>
+								<Bloom />
+							</effect>
+						</Text>
+						<TextField layoutX="103.0" layoutY="284.0" prefHeight="56.0"
+							prefWidth="399.0">
+							<cursor>
+								<Cursor fx:constant="TEXT" />
+							</cursor>
+						</TextField>
+						<Text fill="WHITE" layoutX="183.0" layoutY="276.0"
+							strokeType="OUTSIDE" strokeWidth="0.0" text="Identifiant"
+							textAlignment="CENTER" wrappingWidth="239.00000505050411">
+							<font>
+								<Font size="26.0" />
+							</font>
+						</Text>
+						<Text fill="WHITE" layoutX="180.0" layoutY="382.0"
+							strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe"
+							textAlignment="CENTER" wrappingWidth="239.00000505050411">
+							<cursor>
+								<Cursor fx:constant="DEFAULT" />
+							</cursor>
+							<font>
+								<Font size="26.0" />
+							</font>
+						</Text>
+						<PasswordField layoutX="103.0" layoutY="390.0"
+							prefHeight="56.0" prefWidth="399.0" />
+						<Button fx:id="validateLogin" layoutX="204.0" layoutY="484.0"
+							mnemonicParsing="false" onAction="#setScene_menu" prefHeight="35.0"
+							prefWidth="197.0" styleClass="command" stylesheets="@../styles/style.css"
+							text="Valider" textFill="WHITE" />
+						<Button fx:id="ask_back" layoutX="282.0" layoutY="528.0"
+							mnemonicParsing="false" onAction="#setScene_main" styleClass="command"
+							stylesheets="@../styles/style.css" text="Back" textFill="#979797" />
+					</children>
+				</Pane>
+			</children>
+		</HBox>
+	</children>
+</VBox>
