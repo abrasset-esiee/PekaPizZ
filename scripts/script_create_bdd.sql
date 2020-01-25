@@ -3,7 +3,7 @@ USE Pekapizz;
 
 CREATE TABLE IF NOT EXISTS Taille(
    id_taille INT AUTO_INCREMENT,
-   ratio DECIMAL(15,2),
+   ratio DECIMAL(3,2),
    PRIMARY KEY(id_taille)
 );
 
@@ -29,7 +29,7 @@ CREATE TABLE  IF NOT EXISTS Vehicule(
 CREATE TABLE  IF NOT EXISTS Pizza(
    id_pizza INT AUTO_INCREMENT,
    nom VARCHAR(50),
-   prix_base DECIMAL(2,2),
+   prix_base DECIMAL(4,2),
    PRIMARY KEY(id_pizza)
 );
 
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS  Client(
    id_client INT AUTO_INCREMENT,
    nom VARCHAR(50),
    prenom VARCHAR(50),
-   solde DECIMAL(5,2),
+   solde DECIMAL(7,2),
    id_adresse INT NOT NULL,
    PRIMARY KEY(id_client),
    FOREIGN KEY(id_adresse) REFERENCES Adresse(id_adresse)
@@ -70,8 +70,8 @@ CREATE TABLE  IF NOT EXISTS Livraison(
    immatriculation CHAR(9),
    id_taille INT,
    id_client INT,
-   date_livraison DATETIME,
-   date_reception DATETIME,
+   date_commande TIMESTAMP,
+   date_livraison TIMESTAMP,
    PRIMARY KEY(id_livraison),
    FOREIGN KEY(id_livreur) REFERENCES Livreur(id_livreur),
    FOREIGN KEY(id_pizza) REFERENCES Pizza(id_pizza),
@@ -82,8 +82,8 @@ CREATE TABLE  IF NOT EXISTS Livraison(
 
 
 CREATE TABLE  IF NOT EXISTS Composition(
-   id_ingredient INT AUTO_INCREMENT,
-   id_pizza VARCHAR(50),
+   id_ingredient INT,
+   id_pizza INT,
    PRIMARY KEY(id_ingredient, id_pizza),
    FOREIGN KEY(id_ingredient) REFERENCES Ingredient(id_ingredient),
    FOREIGN KEY(id_pizza) REFERENCES Pizza(id_pizza)
