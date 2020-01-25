@@ -13,9 +13,8 @@ public class Livraison {
 	private Date date_livraison;
 	private Date date_reception;
 	
-	public Livraison(int id, Livreur livreur, Pizza pizza, Vehicule vehicule, Taille taille, Client client,
+	public Livraison(int id, Livreur livreur, Pizza pizza, Vehicule vehicule, Taille taille, Client client, 
 			Date date_livraison, Date date_reception) {
-		super();
 		this.id = id;
 		this.livreur = livreur;
 		this.pizza = pizza;
