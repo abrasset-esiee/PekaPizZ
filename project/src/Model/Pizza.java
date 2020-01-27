@@ -16,6 +16,11 @@ public class Pizza {
 		this.prix_base = prix_base;
 		this.ingredients = new HashSet<String>();
 	}
+	
+	public Pizza(){
+		this.ingredients = new HashSet<String>();
+		
+	}
 
 	public int getId() {
 		return id;

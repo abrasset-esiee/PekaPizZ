@@ -19,7 +19,7 @@ import java.util.HashSet;
 public class PizzaCell extends ListCell<Pizza> {
 
     @FXML
-    Parent pizza_elem;
+     pizza_elem;
 
     @FXML
     private Group pizz_icon;
@@ -44,6 +44,9 @@ public class PizzaCell extends ListCell<Pizza> {
 
     @FXML
     private ListCell pizz_cell;
+    
+    @FXML
+    private CellDisplayController displayController;
 
 
 
@@ -80,7 +83,14 @@ public class PizzaCell extends ListCell<Pizza> {
             setText(null);
             setContentDisplay(ContentDisplay.TEXT_ONLY);
         } else {
-            setPizzaComponents(item.getIngredients());
+        	
+        	System.out.print(displayController);
+        	//displayController.setPizzaComponents(item.getIngredients());
+        	System.out.print(displayController);
+        	//displayController.setName(item.getNom());
+            //getCellController
+            
+            
             //A changer apres modele
             pizz_name.setText(item.getNom());
             pizz_ingredients.setText(getIngredientsString());
@@ -90,26 +100,14 @@ public class PizzaCell extends ListCell<Pizza> {
     }
 
 
-    private void setPizzaComponents(HashSet<String> list) {
-
-    		
-    		pizz_back.setVisible(true);
-       
-        	pizz_olive.setVisible(list.contains("olive"));
-
-    		pizz_egg.setVisible(list.contains("oeuf"));
- 
-    		pizz_poivron.setVisible(list.contains("poivrons"));
-
-    		pizz_mozarella.setVisible(list.contains("mozarella"));
-
-    }
+    
     @FXML
     public void onClickCell() throws IOException {
-        CommandController.commande = pizza;
+        //CommandController.commande = pizza;
 
         pizz_cell.getScene().setRoot(new FXMLLoader(getClass().getResource("/View/commande.fxml")).load());
-        System.out.println(this.isSelected());
+        pizza_elem
+        System.out.println(pizza_elem.getId());
         System.out.println("test click : " + pizza.getNom());
         System.out.println(this.isSelected());
 
@@ -128,5 +126,12 @@ public class PizzaCell extends ListCell<Pizza> {
 
         return s.toString(); 
     	
+    }
+    
+    public Pizza getPizza(){
+    	
+    	
+    	
+    	return pizza;
     }
 }
