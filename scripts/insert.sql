@@ -234,7 +234,7 @@ VALUES
 ('Lardons',             'Etat-Unis'),
 ('Merguez',             'Andorre'),
 ('Salami',              'Saint-marin'),
-('Crème fraiche',       'Lichtenstein'),
+('Kangourou',           'Lichtenstein'),
 ('Thon',                'Vatican'),
 ('Roquefort',           'Japon'),
 ('Gruyère',             'France'),
