@@ -17,10 +17,6 @@ import java.io.IOException;
 import java.util.HashSet;
 
 public class PizzaCell extends ListCell<Pizza> {
-
-    @FXML
-     pizza_elem;
-
     @FXML
     private Group pizz_icon;
 
@@ -46,7 +42,7 @@ public class PizzaCell extends ListCell<Pizza> {
     private ListCell pizz_cell;
     
     @FXML
-    private CellDisplayController displayController;
+    private CellDisplayController pizza_elemController;
 
 
 
@@ -83,18 +79,12 @@ public class PizzaCell extends ListCell<Pizza> {
             setText(null);
             setContentDisplay(ContentDisplay.TEXT_ONLY);
         } else {
-        	
-        	System.out.print(displayController);
-        	//displayController.setPizzaComponents(item.getIngredients());
-        	System.out.print(displayController);
-        	//displayController.setName(item.getNom());
-            //getCellController
-            
-            
-            //A changer apres modele
-            pizz_name.setText(item.getNom());
-            pizz_ingredients.setText(getIngredientsString());
-            pizz_prix.setText(String.valueOf(item.getPrix_base()) + " €");
+
+        	pizza_elemController.setPizzaComponents(item.getIngredients());
+        	pizza_elemController.setName(item.getNom());
+            pizza_elemController.setIngredients(item.getIngredients());
+            pizza_elemController.setPrix(item.getPrix_base());
+
             setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
         }
     }
@@ -103,35 +93,12 @@ public class PizzaCell extends ListCell<Pizza> {
     
     @FXML
     public void onClickCell() throws IOException {
-        //CommandController.commande = pizza;
+        CommandController.commande = pizza;
 
         pizz_cell.getScene().setRoot(new FXMLLoader(getClass().getResource("/View/commande.fxml")).load());
-        pizza_elem
-        System.out.println(pizza_elem.getId());
-        System.out.println("test click : " + pizza.getNom());
-        System.out.println(this.isSelected());
 
-    }
-    
-    String getIngredientsString(){
-    	
-    	
-    	StringBuilder s = new StringBuilder();
 
-        for (String ingredient : pizza.getIngredients()) {
-            s.append(ingredient + ", ");
+        System.out.println("choice : " + pizza.getNom());
 
-        }
-        s.delete(s.length() - 2, s.length());
-
-        return s.toString(); 
-    	
-    }
-    
-    public Pizza getPizza(){
-    	
-    	
-    	
-    	return pizza;
     }
 }
