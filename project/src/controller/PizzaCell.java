@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import model.Pizza;
+import Model.Pizza;
 import controller.Controller;
 
 import java.io.IOException;
@@ -80,11 +80,11 @@ public class PizzaCell extends ListCell<Pizza> {
             setText(null);
             setContentDisplay(ContentDisplay.TEXT_ONLY);
         } else {
-            setPizzaComponents(item.getIngredientsList());
+            setPizzaComponents(item.getIngredients());
             //A changer apres modele
             pizz_name.setText(item.getNom());
-            pizz_ingredients.setText(item.getIngredients());
-            pizz_prix.setText(String.valueOf(item.getPrix_base()) + " â‚¬");
+            pizz_ingredients.setText(getIngredientsString());
+            pizz_prix.setText(String.valueOf(item.getPrix_base()) + " €");
             setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
         }
     }
@@ -113,5 +113,20 @@ public class PizzaCell extends ListCell<Pizza> {
         System.out.println("test click : " + pizza.getNom());
         System.out.println(this.isSelected());
 
+    }
+    
+    String getIngredientsString(){
+    	
+    	
+    	StringBuilder s = new StringBuilder();
+
+        for (String ingredient : pizza.getIngredients()) {
+            s.append(ingredient + ", ");
+
+        }
+        s.delete(s.length() - 2, s.length());
+
+        return s.toString(); 
+    	
     }
 }

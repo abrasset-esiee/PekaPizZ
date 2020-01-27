@@ -1,4 +1,4 @@
-package project;
+package Model;
 
 import java.util.HashSet;
 
@@ -42,9 +42,7 @@ public class Pizza {
 	}
 	
 	public void setIngredient(String ingredient) {
-		for (int i = 0; i < 5; i++) {
-			this.ingredients.add("Test" + i);
-		}
+		this.ingredients.add(ingredient);
 	}
 	
 	public HashSet<String> getIngredients() {

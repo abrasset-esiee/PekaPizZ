@@ -7,7 +7,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
-import model.Pizza;
+import Model.Pizza;
 
 
 public class PizzaCellFactory implements Callback<ListView<Pizza>, ListCell<Pizza>> {

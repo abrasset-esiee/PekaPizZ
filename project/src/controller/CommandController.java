@@ -1,7 +1,7 @@
 package controller;
 
 import javafx.fxml.FXML;
-import model.Pizza;
+import Model.Pizza;
 
 public class CommandController {
 

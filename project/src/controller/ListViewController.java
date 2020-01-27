@@ -4,7 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
-import model.Pizza;
+import Model.Pizza;
 
 import java.io.IOException;
 
@@ -22,41 +22,41 @@ public class ListViewController {
         pizz_list.setCellFactory(new PizzaCellFactory());
 
 
-        Pizza p = new Pizza();
+        /*Pizza p = new Pizza();
         p.setNom("Pizza1");
-        p.addIngredients("olive");
+        p.setIngredient("olive");
         p.setPrix_base(15.32);
 
         Pizza p2 = new Pizza();
         p2.setNom("Pizza2");
-        p2.addIngredients("olive");
-        p2.addIngredients("oeuf");
-        p2.addIngredients("poivrons");
+        p2.setIngredient("olive");
+        p2.setIngredient("oeuf");
+        p2.setIngredient("poivrons");
         p2.setPrix_base(15.32);
 
         Pizza p3 = new Pizza();
         p3.setNom("Pizza3");
-        p3.addIngredients("olive");
-        p3.addIngredients("oeuf");
+        p3.setIngredient("olive");
+        p3.setIngredient("oeuf");
         p3.setPrix_base(15.32);
 
         Pizza p4 = new Pizza();
         p4.setNom("Pizza4");
-        p4.addIngredients("olive");
-        p4.addIngredients("oeuf");
+        p4.setIngredient("olive");
+        p4.setIngredient("oeuf");
         p4.setPrix_base(15.32);
 
         Pizza p5 = new Pizza();
         p5.setNom("Pizza5");
-        p5.addIngredients("olive");
-        p5.addIngredients("oeuf");
+        p5.setIngredient("olive");
+        p5.setIngredient("oeuf");
         p5.setPrix_base(15.32);
 
         listViewData.add(p);
         listViewData.add(p2);
         listViewData.add(p3);
         listViewData.add(p4);
-        listViewData.add(p5);
+        listViewData.add(p5);*/
 
 
         pizz_list.setItems(listViewData);
