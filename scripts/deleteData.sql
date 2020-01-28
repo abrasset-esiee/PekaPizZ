@@ -1,0 +1,9 @@
+TRUNCATE Adresse;
+TRUNCATE Client;
+TRUNCATE Composition;
+TRUNCATE Ingredient;
+TRUNCATE Livraison;
+TRUNCATE Livreur;
+TRUNCATE Pizza;
+TRUNCATE Taille;
+TRUNCATE Vehicule;
