@@ -1,5 +1,5 @@
 
-INSERT INTO adresse (nom_rue, Numero_rue, code_postal, Ville)
+INSERT INTO adresse (nom_rue, numero_rue, code_postal, Ville)
 VALUES
 ('Mondes du Noyau',             '1',    '60110', 'Alderaan'),
 ('Bordure extérieure',          '38',   '69552', 'Bastion'),
