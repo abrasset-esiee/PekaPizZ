@@ -1,5 +1,5 @@
 
-INSERT INTO adresse (nom_rue, numero_rue, code_postal, Ville)
+INSERT INTO Adresse (nom_rue, numero_rue, code_postal, Ville)
 VALUES
 ('Mondes du Noyau',             '1',    '60110', 'Alderaan'),
 ('Bordure extérieure',          '38',   '69552', 'Bastion'),
@@ -22,7 +22,7 @@ VALUES
 ('Planète des Hutts',           '69',   '30677', 'Tatooine'),
 ("Base de l'Alliance Rebelle",  '30',   '97949', 'Yavin IV');
 
-INSERT INTO client (nom, prenom, solde, id_adresse)
+INSERT INTO Client (nom, prenom, solde, id_adresse)
 VALUES
 ('DARK',    'Vador',    '0', 1),
 ('DARTH',   'Sidious',  '0', 2),
@@ -46,7 +46,7 @@ VALUES
 ('HETT',    "A'Sharad", '0', 20);
 
 
-INSERT INTO composition (id_pizza, id_ingredient)
+INSERT INTO Composition (id_pizza, id_ingredient)
 VALUES
 (1,4),
 (1,29),
@@ -199,7 +199,7 @@ VALUES
 (25,35);
 
 
-INSERT INTO ingredient (nom, provenance)
+INSERT INTO Ingredient (nom, provenance)
 VALUES
 ('Patate',              'France'),
 ('Tomate',              'Espagne'),
@@ -242,7 +242,7 @@ VALUES
 ('Viande de grison',    'Grison');
 
 
-INSERT INTO livraison(id_livreur, id_pizza, immatriculation, id_taille, id_client, date_commande, date_livraison)
+INSERT INTO Livraison(id_livreur, id_pizza, immatriculation, id_taille, id_client, date_commande, date_livraison)
 VALUES
 (1,  1, '84HRO10BK', 1, 1,      TIMESTAMP '2020-01-01 11:00:32', TIMESTAMP '2020-01-20 11:25:00'),
 (15, 2, '10CFQ45MJ', 1, 2,      TIMESTAMP '2020-01-02 12:00:59', TIMESTAMP '2020-01-02 12:45:00'),
@@ -304,7 +304,7 @@ VALUES
 (19, 23, '65QHNT56X', 20, 9,     TIMESTAMP '2019-12-31 20:25:14', TIMESTAMP '2019-12-31 20:50:00'),
 (1,  21, '10CFQ45MJ', 20, 10,    TIMESTAMP '2019-11-01 21:01:00', TIMESTAMP '2019-11-01 21:25:00');
 
-INSERT INTO livreur(nom, prenom)
+INSERT INTO Livreur(nom, prenom)
 VALUES
 ('KENOBI',      'Obi-Wan'),
 ('SHAN',        'BASTILA'),
@@ -326,7 +326,7 @@ VALUES
 ('ORGANA',      'Leia'),
 ('CALRISSIA',   'Lando');
 
-INSERT INTO pizza (nom, prix_base)
+INSERT INTO Pizza (nom, prix_base)
 VALUES
 ('La Speciale',         '13.99'),
 ('La DrataPizZ',        '15.00'),
@@ -354,13 +354,13 @@ VALUES
 ('La forge Stellaire',  '12.75'),
 ('Korriban',            '27.00');
 
-INSERT INTO taille (id_taille, ratio)
+INSERT INTO Taille (id_taille, ratio)
 VALUES
 (1, 0.66),
 (2, 1),
 (3, 1.33);
 
-INSERT INTO vehicule (immatriculation, voiture, couleur, modele, annee)
+INSERT INTO Vehicule (immatriculation, voiture, couleur, modele, annee)
 VALUES
 ('ABR65BX5T', 1, 'Rouge', 'Fiat multiplat', '2009'),
 ('65QHNT56X', 1, 'Cyan', 'Bac a legume', '2014'),
