@@ -1,3 +1,4 @@
+USE Pekapizz;
 
 INSERT INTO Adresse(nom_rue, Numero_rue, code_postal, Ville)
 VALUES
