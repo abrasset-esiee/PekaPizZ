@@ -16,17 +16,18 @@ CREATE TABLE IF NOT EXISTS Ingredient(
 );
 
 
-CREATE TABLE  IF NOT EXISTS Vehicule(
+CREATE TABLE IF NOT EXISTS Vehicule(
    immatriculation CHAR(9),
-   voiture tinyint(1),
+   voiture TINYINT(1),
    couleur VARCHAR(50),
    modele VARCHAR(50),
    annee VARCHAR(50),
-   PRIMARY KEY(immatriculation)
+   PRIMARY KEY(immatriculation),
+   UNIQUE KEY `immatriculation_UNIQUE` (`immatriculation`)
 );
 
 
-CREATE TABLE  IF NOT EXISTS Pizza(
+CREATE TABLE IF NOT EXISTS Pizza(
    id_pizza INT AUTO_INCREMENT,
    nom VARCHAR(50),
    prix_base DECIMAL(4,2),
@@ -34,7 +35,7 @@ CREATE TABLE  IF NOT EXISTS Pizza(
 );
 
 
-CREATE TABLE  IF NOT EXISTS Livreur(
+CREATE TABLE IF NOT EXISTS Livreur(
    id_livreur INT AUTO_INCREMENT,
    nom VARCHAR(50),
    prenom VARCHAR(50),
@@ -42,9 +43,9 @@ CREATE TABLE  IF NOT EXISTS Livreur(
 );
 
 
-CREATE TABLE  IF NOT EXISTS Adresse(
+CREATE TABLE IF NOT EXISTS Adresse(
    id_adresse INT AUTO_INCREMENT,
-   numero_rue VARCHAR(5),
+   Numero_rue VARCHAR(5),
    nom_rue VARCHAR(50),
    code_postal CHAR(5),
    ville VARCHAR(50),
@@ -52,7 +53,7 @@ CREATE TABLE  IF NOT EXISTS Adresse(
 );
 
 
-CREATE TABLE IF NOT EXISTS  Client(
+CREATE TABLE IF NOT EXISTS Client(
    id_client INT AUTO_INCREMENT,
    nom VARCHAR(50),
    prenom VARCHAR(50),
@@ -63,25 +64,24 @@ CREATE TABLE IF NOT EXISTS  Client(
 );
 
 
-CREATE TABLE  IF NOT EXISTS Livraison(
+CREATE TABLE IF NOT EXISTS Livraison(
    id_livraison INT AUTO_INCREMENT,
-   id_livreur VARCHAR(50),
-   id_pizza VARCHAR(50),
+   id_livreur INT,
+   id_pizza INT,
    immatriculation CHAR(9),
    id_taille INT,
    id_client INT,
-   date_commande TIMESTAMP,
-   date_livraison TIMESTAMP,
+   date_commande DATETIME,
+   date_livraison DATETIME,
    PRIMARY KEY(id_livraison),
    FOREIGN KEY(id_livreur) REFERENCES Livreur(id_livreur),
    FOREIGN KEY(id_pizza) REFERENCES Pizza(id_pizza),
-   FOREIGN KEY(immatriculation) REFERENCES Véhicule(immatriculation),
+   FOREIGN KEY(immatriculation) REFERENCES Vehicule(immatriculation),
    FOREIGN KEY(id_taille) REFERENCES Taille(id_taille),
    FOREIGN KEY(id_client) REFERENCES Client(id_client)
 );
 
-
-CREATE TABLE  IF NOT EXISTS Composition(
+CREATE TABLE IF NOT EXISTS Composition(
    id_ingredient INT,
    id_pizza INT,
    PRIMARY KEY(id_ingredient, id_pizza),
