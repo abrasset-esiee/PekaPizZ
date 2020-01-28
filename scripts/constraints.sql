@@ -1,3 +1,4 @@
+USE Pekapizz;
 ALTER TABLE Client ADD CONSTRAINT chk_client CHECK (solde >= 0);
 ALTER TABLE Ingredient ADD CONSTRAINT uni_ingredien UNIQUE (nom);
 -- ALTER TABLE livraison ADD CONSTRAINT chk_livraison TIMEDIFF(date_livraison, date_commande) > "00:00";
