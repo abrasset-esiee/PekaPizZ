@@ -44,7 +44,7 @@ CREATE TABLE  IF NOT EXISTS Livreur(
 
 CREATE TABLE  IF NOT EXISTS Adresse(
    id_adresse INT AUTO_INCREMENT,
-   Numero_rue VARCHAR(5),
+   numero_rue VARCHAR(5),
    nom_rue VARCHAR(50),
    code_postal CHAR(5),
    ville VARCHAR(50),
