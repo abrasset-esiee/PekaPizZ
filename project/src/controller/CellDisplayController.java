@@ -61,6 +61,68 @@ public class CellDisplayController {
     @FXML
     private Group pizz_boeuf;
 
+    @FXML
+    private Group pizz_reblo;
+
+    @FXML
+    private Group pizz_champi;
+
+    @FXML
+    private Group pizz_ananas;
+
+    @FXML
+    private Group pizz_basilic;
+    @FXML
+    private Group pizz_artichaut;
+    @FXML
+    private Group pizz_chevre;
+    @FXML
+    private Group pizz_chorizo;
+    @FXML
+    private Group pizz_peperonni;
+    @FXML
+    private Group pizz_hache;
+    @FXML
+    private Group pizz_romarin;
+    @FXML
+    private Group pizz_ail;
+    @FXML
+    private Group pizz_origan;
+    @FXML
+    private Group pizz_anchois;
+    @FXML
+    private Group pizz_jambon;
+    @FXML
+    private Group pizz_piment;
+    @FXML
+    private Group pizz_emmental;
+    @FXML
+    private Group pizz_saumon;
+    @FXML
+    private Group pizz_lardon;
+    @FXML
+    private Group pizz_merguez;
+    @FXML
+    private Group pizz_kangourou;
+    @FXML
+    private Group pizz_thon;
+    @FXML
+    private Group pizz_roquefort;
+
+    @FXML
+    private Group pizz_gruyere;
+
+    @FXML
+    private Group pizz_capres;
+
+    @FXML
+    private Group pizz_grison;
+
+    @FXML
+    private Group pizz_parmesan;
+
+
+
 
 
     public void setPizzaComponents(HashSet<String> list) {
