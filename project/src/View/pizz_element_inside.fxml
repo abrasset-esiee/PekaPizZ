@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import java.lang.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Label?>
@@ -16,15 +8,17 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Arc?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CellDisplayController">
+<GridPane xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CellDisplayController">
 	<columnConstraints>
 		<ColumnConstraints />
 		<ColumnConstraints />
@@ -47,6 +41,50 @@
             <Group fx:id="pizz_creme">
                <children>
 						<Circle fill="#fffae3" radius="59.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_salami" rotate="37.6">
+               <children>
+                  <Circle layoutX="-37.0" radius="14.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#eb6e6e" />
+                              <Stop color="#f20040" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+                  <Circle layoutX="40.0" radius="14.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#eb6e6e" />
+                              <Stop color="#f20040" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+                  <Circle layoutY="37.0" radius="14.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#eb6e6e" />
+                              <Stop color="#f20040" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+                  <Circle layoutY="-37.0" radius="14.0" rotate="49.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#eb6e6e" />
+                              <Stop color="#f20040" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
                </children>
             </Group>
 				<Group fx:id="pizz_mozarella">
@@ -237,6 +275,527 @@
                         <Arc fill="WHITE" layoutX="219.0" layoutY="142.0" length="200.0" radiusX="100.0" radiusY="100.0" rotate="-40.6" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
                      </children>
                   </Group>
+               </children>
+            </Group>
+            <Group fx:id="pizz_ananas" layoutX="-95.0" layoutY="-95.0">
+               <children>
+                  <Circle centerX="72.0" centerY="67.0" fill="#1f93ff00" radius="10.0" stroke="#fff500" strokeType="INSIDE" style="-fx-stroke-width: 5.5;" />
+                  <Circle centerX="116.0" centerY="67.0" fill="#1f93ff00" layoutX="10.0" layoutY="10.0" radius="10.0" stroke="#fff500" strokeType="INSIDE" style="-fx-stroke-width: 5.5;" />
+                  <Circle centerX="96.0" centerY="107.0" fill="#1f93ff00" layoutX="20.0" layoutY="20.0" radius="10.0" stroke="#fff500" strokeType="INSIDE" style="-fx-stroke-width: 5.5;" />
+                  <Circle centerX="36.0" centerY="87.0" fill="#1f93ff00" layoutX="30.0" layoutY="30.0" radius="10.0" stroke="#fff500" strokeType="INSIDE" style="-fx-stroke-width: 5.5;" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_basilic" rotate="84.3">
+               <children>
+                  <Arc fill="#1ff226" layoutX="30.0" layoutY="20.0" length="270.0" radiusX="5.0" radiusY="11.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#1ff226" layoutX="40.0" layoutY="-20.0" length="270.0" radiusX="5.0" radiusY="11.0" rotate="-80.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#1ff226" layoutX="-25.0" layoutY="23.0" length="270.0" radiusX="5.0" radiusY="11.0" rotate="65.6" startAngle="80.5" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#1ff226" layoutX="-22.0" layoutY="-10.0" length="270.0" radiusX="5.0" radiusY="11.0" startAngle="164.7" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_artichaut" rotate="49.4">
+               <children>
+                  <Arc fill="#005e00" layoutX="30.0" layoutY="20.0" length="270.0" radiusX="5.0" radiusY="11.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#005e00" layoutX="40.0" layoutY="-20.0" length="270.0" radiusX="5.0" radiusY="11.0" rotate="-80.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#005e00" layoutX="-25.0" layoutY="23.0" length="270.0" radiusX="5.0" radiusY="11.0" rotate="65.6" startAngle="80.5" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#005e00" layoutX="-22.0" layoutY="-10.0" length="270.0" radiusX="5.0" radiusY="11.0" startAngle="164.7" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_chevre" rotate="49.6">
+               <children>
+                  <Circle layoutX="-37.0" radius="14.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+                  <Circle layoutX="40.0" radius="14.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+                  <Circle layoutY="37.0" radius="14.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+                  <Circle layoutY="-37.0" radius="14.0" rotate="49.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+               </children>
+            </Group>
+            <Group fx:id="pizz_chorizo" rotate="-45.0">
+               <children>
+                  <Circle layoutX="-37.0" radius="14.0" scaleX="0.5" scaleY="0.5" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#860101" offset="0.011111111111111112" />
+                              <Stop color="#f20101" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+                  <Circle layoutX="40.0" radius="14.0" scaleX="0.5" scaleY="0.5" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#860101" offset="0.011111111111111112" />
+                              <Stop color="#f20101" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+                  <Circle layoutY="37.0" radius="14.0" scaleX="0.5" scaleY="0.5" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#860101" offset="0.011111111111111112" />
+                              <Stop color="#f20101" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+                  <Circle layoutY="-37.0" radius="14.0" rotate="49.0" scaleX="0.5" scaleY="0.5" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#860101" offset="0.011111111111111112" />
+                              <Stop color="#f20101" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+               </children>
+            </Group>
+            <Group fx:id="pizz_peperonni">
+               <children>
+                  <Circle layoutX="-37.0" radius="14.0" scaleX="0.75" scaleY="0.75" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#f2eeee" offset="0.007407407407407408" />
+                              <Stop color="RED" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+                  <Circle layoutX="40.0" radius="14.0" scaleX="0.75" scaleY="0.75" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#f2eeee" offset="0.007407407407407408" />
+                              <Stop color="RED" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+                  <Circle layoutY="37.0" radius="14.0" scaleX="0.75" scaleY="0.75" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#f2eeee" offset="0.007407407407407408" />
+                              <Stop color="RED" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+                  <Circle layoutY="-37.0" radius="14.0" rotate="49.0" scaleX="0.75" scaleY="0.75" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#f2eeee" offset="0.007407407407407408" />
+                              <Stop color="RED" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+               </children>
+            </Group>
+            <Group fx:id="pizz_hache" rotate="90.0">
+               <children>
+                  <Arc fill="#613900" layoutX="-21.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.3" scaleY="0.3" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#613900" layoutX="25.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.3" scaleY="0.3" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#613900" layoutX="19.0" layoutY="19.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.3" scaleY="0.3" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#613900" layoutX="-31.0" layoutY="29.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.3" scaleY="0.3" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#613900" layoutX="-11.0" layoutY="-21.0" length="220.0" radiusX="10.0" radiusY="27.0" scaleX="0.3" scaleY="0.3" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_romarin" rotate="-60.3">
+               <children>
+                  <Arc layoutX="30.0" layoutY="20.0" length="270.0" radiusX="5.0" radiusY="11.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#17da05" offset="0.011111111111111112" />
+                              <Stop color="#029e05" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="40.0" layoutY="-20.0" length="270.0" radiusX="5.0" radiusY="11.0" rotate="-80.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#17da05" offset="0.011111111111111112" />
+                              <Stop color="#029e05" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="-25.0" layoutY="23.0" length="270.0" radiusX="5.0" radiusY="11.0" rotate="65.6" startAngle="80.5" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#17da05" offset="0.011111111111111112" />
+                              <Stop color="#029e05" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="-22.0" layoutY="-10.0" length="270.0" radiusX="5.0" radiusY="11.0" startAngle="164.7" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#17da05" offset="0.011111111111111112" />
+                              <Stop color="#029e05" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+               </children>
+            </Group>
+            <Group fx:id="pizz_ail" rotate="-9.5">
+               <children>
+                  <Arc fill="#dee4b7" layoutX="30.0" layoutY="20.0" length="270.0" radiusX="5.0" radiusY="11.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#dee4b7" layoutX="40.0" layoutY="-20.0" length="270.0" radiusX="5.0" radiusY="11.0" rotate="-80.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#dee4b7" layoutX="-25.0" layoutY="23.0" length="270.0" radiusX="5.0" radiusY="11.0" rotate="65.6" startAngle="80.5" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#dee4b7" layoutX="-22.0" layoutY="-10.0" length="270.0" radiusX="5.0" radiusY="11.0" startAngle="164.7" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_origan">
+               <children>
+                  <Arc layoutX="30.0" layoutY="20.0" length="270.0" radiusX="5.0" radiusY="11.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#17da05" offset="0.011111111111111112" />
+                              <Stop color="#029e05" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="40.0" layoutY="-20.0" length="270.0" radiusX="5.0" radiusY="11.0" rotate="-80.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#17da05" offset="0.011111111111111112" />
+                              <Stop color="#029e05" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="-25.0" layoutY="23.0" length="270.0" radiusX="5.0" radiusY="11.0" rotate="65.6" startAngle="80.5" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#17da05" offset="0.011111111111111112" />
+                              <Stop color="#029e05" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="-22.0" layoutY="-10.0" length="270.0" radiusX="5.0" radiusY="11.0" startAngle="164.7" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#17da05" offset="0.011111111111111112" />
+                              <Stop color="#029e05" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+               </children>
+            </Group>
+            <Group fx:id="pizz_anchois" rotate="55.0">
+               <children>
+                  <Arc fill="#d7cba1" layoutX="-21.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="10.3" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#d7cba1" layoutX="25.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="45.0" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#d7cba1" layoutX="19.0" layoutY="19.0" length="220.0" radiusX="10.0" radiusY="27.0" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#d7cba1" layoutX="-31.0" layoutY="29.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="-24.4" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_jambon">
+               <children>
+                  <Arc fill="#c993a9" layoutX="-21.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="10.3" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#c993a9" layoutX="25.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="45.0" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#c993a9" layoutX="19.0" layoutY="19.0" length="220.0" radiusX="10.0" radiusY="27.0" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#c993a9" layoutX="-31.0" layoutY="29.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="-24.4" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_piment" rotate="-21.8">
+               <children>
+                  <Arc fill="RED" layoutX="30.0" layoutY="20.0" length="270.0" radiusX="5.0" radiusY="11.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="RED" layoutX="40.0" layoutY="-20.0" length="270.0" radiusX="5.0" radiusY="11.0" rotate="-80.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="RED" layoutX="-25.0" layoutY="23.0" length="270.0" radiusX="5.0" radiusY="11.0" rotate="65.6" startAngle="80.5" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="RED" layoutX="-22.0" layoutY="-10.0" length="270.0" radiusX="5.0" radiusY="11.0" startAngle="164.7" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_emmental" rotate="35.3">
+               <children>
+                  <Arc fill="#ffeb68" layoutX="12.0" layoutY="-10.0" length="40.0" radiusX="33.0" radiusY="37.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#ffeb68" layoutX="-40.0" layoutY="-5.0" length="40.0" radiusX="33.0" radiusY="37.0" rotate="-58.2" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#ffeb68" layoutX="-16.0" layoutY="51.0" length="40.0" radiusX="33.0" radiusY="37.0" rotate="168.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_saumon" rotate="79.2">
+               <children>
+                  <Arc fill="#ff7da4" layoutX="-21.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#ff7da4" layoutX="25.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#ff7da4" layoutX="19.0" layoutY="19.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#ff7da4" layoutX="-31.0" layoutY="29.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_lardon" layoutX="10.0" layoutY="10.0">
+               <children>
+                  <Arc layoutX="-21.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.5" scaleY="0.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e44545" />
+                              <Stop color="#e44545" offset="0.007407407407407408" />
+                              <Stop color="#d3e1d3" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="25.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.5" scaleY="0.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e44545" />
+                              <Stop color="#e44545" offset="0.007407407407407408" />
+                              <Stop color="#d3e1d3" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="19.0" layoutY="19.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.5" scaleY="0.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e44545" />
+                              <Stop color="#e44545" offset="0.007407407407407408" />
+                              <Stop color="#d3e1d3" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="-31.0" layoutY="29.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.5" scaleY="0.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e44545" />
+                              <Stop color="#e44545" offset="0.007407407407407408" />
+                              <Stop color="#d3e1d3" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+               </children>
+            </Group>
+            <Group fx:id="pizz_merguez">
+               <children>
+                  <Arc layoutX="-21.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <RadialGradient centerX="0.4550561797752809" centerY="0.24038461538461536" radius="1.0">
+                           <stops>
+                              <Stop color="#e44545" />
+                              <Stop color="#e44545" offset="0.007407407407407408" />
+                              <Stop color="#1b1c15" offset="0.9259259259259259" />
+                              <Stop color="#1b1c15" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="25.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <RadialGradient centerX="0.4550561797752809" centerY="0.24038461538461536" radius="1.0">
+                           <stops>
+                              <Stop color="#e44545" />
+                              <Stop color="#e44545" offset="0.007407407407407408" />
+                              <Stop color="#1b1c15" offset="0.9259259259259259" />
+                              <Stop color="#1b1c15" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="19.0" layoutY="19.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <RadialGradient centerX="0.4550561797752809" centerY="0.24038461538461536" radius="1.0">
+                           <stops>
+                              <Stop color="#e44545" />
+                              <Stop color="#e44545" offset="0.007407407407407408" />
+                              <Stop color="#1b1c15" offset="0.9259259259259259" />
+                              <Stop color="#1b1c15" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="-31.0" layoutY="29.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <RadialGradient centerX="0.4550561797752809" centerY="0.24038461538461536" radius="1.0">
+                           <stops>
+                              <Stop color="#e44545" />
+                              <Stop color="#e44545" offset="0.007407407407407408" />
+                              <Stop color="#1b1c15" offset="0.9259259259259259" />
+                              <Stop color="#1b1c15" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Arc>
+               </children>
+            </Group>
+            <Group fx:id="pizz_kangourou" rotate="53.1">
+               <children>
+                  <Arc fill="#fc800d" layoutX="-21.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.5" scaleY="0.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#fc800d" layoutX="25.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.5" scaleY="0.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#fc800d" layoutX="19.0" layoutY="19.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.5" scaleY="0.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#fc800d" layoutX="-31.0" layoutY="29.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.5" scaleY="0.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_thon" layoutX="10.0" layoutY="10.0" rotate="45.0">
+               <children>
+                  <Arc fill="#d35c76" layoutX="-21.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.5" scaleY="0.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#d35c76" layoutX="25.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.5" scaleY="0.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#d35c76" layoutX="19.0" layoutY="19.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.5" scaleY="0.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#d35c76" layoutX="-31.0" layoutY="29.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.5" scaleY="0.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_roquefort" rotate="18.4">
+               <children>
+                  <Arc fill="#6c8371" layoutX="12.0" layoutY="-10.0" length="40.0" radiusX="33.0" radiusY="37.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#6c8371" layoutX="-40.0" layoutY="-5.0" length="40.0" radiusX="33.0" radiusY="37.0" rotate="-58.2" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#6c8371" layoutX="-16.0" layoutY="51.0" length="40.0" radiusX="33.0" radiusY="37.0" rotate="168.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_gruyere" rotate="-3.4">
+               <children>
+                  <Arc fill="#f5d12e" layoutX="12.0" layoutY="-10.0" length="40.0" radiusX="33.0" radiusY="37.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#f5d12e" layoutX="-40.0" layoutY="-5.0" length="40.0" radiusX="33.0" radiusY="37.0" rotate="-58.2" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#f5d12e" layoutX="-16.0" layoutY="51.0" length="40.0" radiusX="33.0" radiusY="37.0" rotate="168.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_capres" rotate="95.2">
+               <children>
+                  <Arc layoutX="30.0" layoutY="20.0" length="270.0" radiusX="5.0" radiusY="11.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#17da05" offset="0.011111111111111112" />
+                              <Stop color="#029e05" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="40.0" layoutY="-20.0" length="270.0" radiusX="5.0" radiusY="11.0" rotate="-80.5" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#17da05" offset="0.011111111111111112" />
+                              <Stop color="#029e05" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="-25.0" layoutY="23.0" length="270.0" radiusX="5.0" radiusY="11.0" rotate="65.6" startAngle="80.5" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#17da05" offset="0.011111111111111112" />
+                              <Stop color="#029e05" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+                  <Arc layoutX="-22.0" layoutY="-10.0" length="270.0" radiusX="5.0" radiusY="11.0" startAngle="164.7" stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#e8e8e8" />
+                              <Stop color="#17da05" offset="0.011111111111111112" />
+                              <Stop color="#029e05" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Arc>
+               </children>
+            </Group>
+            <Group fx:id="pizz_grison" rotate="120.0">
+               <children>
+                  <Arc fill="#794a04" layoutX="-21.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#794a04" layoutX="25.0" layoutY="-31.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#794a04" layoutX="19.0" layoutY="19.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Arc fill="#794a04" layoutX="-31.0" layoutY="29.0" length="220.0" radiusX="10.0" radiusY="27.0" rotate="21.8" scaleX="0.7" scaleY="0.7" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+               </children>
+            </Group>
+            <Group fx:id="pizz_parmesan">
+               <children>
+                  <Circle centerX="40.0" fill="#eeff1f" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle centerX="20.0" fill="#eeff1f" layoutX="10.0" layoutY="10.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle centerY="20.0" fill="#eeff1f" layoutX="20.0" layoutY="20.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle centerX="-60.0" fill="#eeff1f" layoutX="30.0" layoutY="30.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle centerY="20.0" fill="#eeff1f" layoutX="10.0" layoutY="10.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle centerX="-40.0" fill="#eeff1f" layoutX="20.0" layoutY="20.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle centerX="-40.0" centerY="-40.0" fill="#eeff1f" layoutX="30.0" layoutY="30.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle centerY="-60.0" fill="#eeff1f" layoutX="40.0" layoutY="40.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle centerX="-10.0" centerY="-50.0" fill="#eeff1f" layoutX="10.0" layoutY="10.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle centerX="-60.0" centerY="-40.0" fill="#eeff1f" layoutX="20.0" layoutY="20.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle centerY="-70.0" fill="#eeff1f" layoutX="30.0" layoutY="30.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle centerX="-50.0" fill="#eeff1f" layoutX="40.0" layoutY="40.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle centerX="-60.0" centerY="-20.0" fill="#eeff1f" layoutX="20.0" layoutY="20.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle centerX="-40.0" centerY="-20.0" fill="#eeff1f" layoutX="30.0" layoutY="30.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle centerX="-30.0" centerY="-40.0" fill="#eeff1f" layoutX="40.0" layoutY="40.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" />
                </children>
             </Group>
 			</children>
