@@ -62,12 +62,6 @@ public class CellDisplayController {
     private Group pizz_boeuf;
 
     @FXML
-    private Group pizz_reblo;
-
-    @FXML
-    private Group pizz_champi;
-
-    @FXML
     private Group pizz_ananas;
 
     @FXML
@@ -120,6 +114,10 @@ public class CellDisplayController {
 
     @FXML
     private Group pizz_parmesan;
+    
+    @FXML
+    private Group pizz_salami;
+
 
 
 
@@ -129,23 +127,50 @@ public class CellDisplayController {
 
 		
 		pizz_back.setVisible(true);
-
         pizz_patate.setVisible((list.contains("Patate")));
         pizz_tomatoes.setVisible(list.contains("Tomate"));
         pizz_oignons.setVisible(list.contains("Oignons"));
-        pizz_creme.setVisible(list.contains("CrÃ¨me fraiche"));
+        pizz_creme.setVisible(list.contains("Creme fraiche"));
         pizz_chicken.setVisible(list.contains("Poulet"));
         pizz_boeuf.setVisible(list.contains("Boeuf"));
         pizz_reblo.setVisible(list.contains("Reblochon"));
         pizz_poivron.setVisible(list.contains("Poivrons"));
         pizz_champi.setVisible(list.contains("Champignons"));
-
-        pizz_mozarella.setVisible(list.contains("mozarella"));
-
-
-        pizz_egg.setVisible(list.contains("oeuf"));
-
-        pizz_olive.setVisible(list.contains("olive"));
+        //salade
+        pizz_mozarella.setVisible(list.contains("Mozarella"));
+        pizz_egg.setVisible(list.contains("Oeuf"));
+        pizz_ananas.setVisible(list.contains("Ananas"));
+        pizz_basilic.setVisible(list.contains("Basilic"));
+        pizz_olive.setVisible(list.contains("Olive"));
+        pizz_artichaut.setVisible(list.contains("Artichaud"));
+        pizz_chorizo.setVisible(list.contains("Chorizo"));
+        pizz_peperonni.setVisible(list.contains("Peperonni"));
+        pizz_hache.setVisible(list.contains("Viande haché"));
+        pizz_romarin.setVisible(list.contains("Romarins"));
+        pizz_ail.setVisible(list.contains("Ail"));
+        pizz_origan.setVisible(list.contains("Origan"));
+        pizz_anchois.setVisible(list.contains("Anchois"));
+        pizz_jambon.setVisible(list.contains("Jambon"));
+        pizz_parmesan.setVisible(list.contains("Parmesan"));
+        pizz_chevre.setVisible(list.contains("Chèvres"));
+        pizz_piment.setVisible(list.contains("Piment"));
+        //gorgonzolla
+        pizz_emmental.setVisible(list.contains("Emental"));
+        pizz_saumon.setVisible(list.contains("Saumons"));
+        pizz_lardon.setVisible(list.contains("Lardons"));
+        pizz_merguez.setVisible(list.contains("Merguez"));
+        pizz_salami.setVisible(list.contains("Salami"));
+        pizz_kangourou.setVisible(list.contains("Kangourou"));
+        pizz_thon.setVisible(list.contains("Thon"));
+        pizz_roquefort.setVisible(list.contains("Roquefort"));
+        pizz_gruyere.setVisible(list.contains("Gruyère"));
+        pizz_capres.setVisible(list.contains("Câpres"));
+        pizz_grison.setVisible(list.contains("Viande de grison"));
+        
+        
+        
+        
+        
 
 
 
@@ -171,7 +196,7 @@ public class CellDisplayController {
 
     void setPrix(double prix){
 
-        pizz_prix.setText(prix + " â‚¬");
+        pizz_prix.setText(prix + " €");
 
     }
 
