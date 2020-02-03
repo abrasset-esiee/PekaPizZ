@@ -4,11 +4,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import Model.Adresse;
 import Model.Client;
 import Model.Livreur;
 import Model.Pizza;
-
+import dao.AdresseDAO;
 import dao.JDBConnection;
 import dao.PizzaDAO;
 
@@ -19,6 +22,37 @@ public class PizzaController implements PizzaDAO {
 	
 	private static final String PIZZA_CLIENT_REQ = "SELECT COUNT(id_livraison) as Nb_Pizza FROM Livraison WHERE id_client = ?";
 	
+	
+	@Override
+	public List<Pizza> findAll() throws SQLException {
+		Connection con = null;
+		ArrayList<Pizza> a1 = new ArrayList<Pizza>();
+		
+		try {
+			con = JDBConnection.getConnection();
+			PreparedStatement stmt = con.prepareStatement(FINDALL_PIZZA_REQ);
+			
+			// émet une requête de type Select
+			ResultSet result = stmt.executeQuery();
+
+			// affiche les lignes/colonnes du résultat
+			// (result.next() permet de passer à la ligne de résultat suivant)
+			while (result.next()) {
+				
+				a1.add(
+						new Pizza(
+								result.getInt("id_pizza"), 
+								result.getString("nom"), 
+								result.getDouble("prix_base")
+						)
+					);
+			}
+		} catch (SQLException e) {
+			System.err.println("Erreur d'exécution: " + e.getMessage());
+		}
+		
+		return a1;		
+	}
 	@Override
 	public Pizza findByID(int id) throws SQLException {
 		Connection con = null;

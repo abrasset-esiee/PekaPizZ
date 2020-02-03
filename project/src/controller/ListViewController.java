@@ -7,6 +7,7 @@ import javafx.scene.control.ListView;
 import Model.Pizza;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 
 public class ListViewController {
@@ -21,7 +22,12 @@ public class ListViewController {
 
         pizz_list.setCellFactory(new PizzaCellFactory());
 
-        //initialise pizzas
+        //Initialize pizzas
+        try {
+			listViewData.addAll(new PizzaController().findAll());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
         
         pizz_list.setItems(listViewData);
 

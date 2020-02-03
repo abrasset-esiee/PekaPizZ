@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import Model.Client;
 import Model.Pizza;
@@ -26,5 +27,12 @@ public interface PizzaDAO {
 	 * @return
 	 */
 	public abstract int pizzaByClient(Client client) throws SQLException;
+
+	/**
+	 * Permet de récupérer toutes les pizzas
+	 * @return
+	 * @throws SQLException
+	 */
+	List<Pizza> findAll() throws SQLException;
 
 }
