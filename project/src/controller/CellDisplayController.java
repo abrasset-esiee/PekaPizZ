@@ -166,15 +166,6 @@ public class CellDisplayController {
         pizz_gruyere.setVisible(list.contains("Gruyère"));
         pizz_capres.setVisible(list.contains("Câpres"));
         pizz_grison.setVisible(list.contains("Viande de grison"));
-        
-        
-        
-        
-        
-
-
-
-
     }
     
     void setName(String s){
@@ -186,7 +177,7 @@ public class CellDisplayController {
         StringBuilder s = new StringBuilder();
 
         for (String ingredient : list) {
-            s.append(ingredient + ", ");
+            s.append(ingredient +  ", ");
 
         }
         s.delete(s.length() - 2, s.length());

@@ -17,26 +17,6 @@ import java.io.IOException;
 import java.util.HashSet;
 
 public class PizzaCell extends ListCell<Pizza> {
-    @FXML
-    private Group pizz_icon;
-
-    @FXML
-    private Group pizz_olive;
-    
-    @FXML
-    private Group pizz_back;
-    
-    @FXML
-    private Group pizz_egg;
-    
-    @FXML
-    private Label pizz_prix;
-    
-    @FXML
-    private Group pizz_poivron;
-    
-    @FXML
-    private Group pizz_mozarella;
 
     @FXML
     private ListCell pizz_cell;
@@ -44,13 +24,6 @@ public class PizzaCell extends ListCell<Pizza> {
     @FXML
     private CellDisplayController pizza_elemController;
 
-
-
-    @FXML
-    private Text pizz_name;
-
-    @FXML
-    private Text pizz_ingredients;
 
     Pizza pizza;
 
