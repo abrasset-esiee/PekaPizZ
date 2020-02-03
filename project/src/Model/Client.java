@@ -4,11 +4,16 @@ public class Client extends Personne {
 
 	private int id;
     private double solde;
-    Adresse adresse;
+    private Adresse adresse;
+    
+    public Client(String nom, String prenom, double solde, Adresse adresse) {
+		super(nom, prenom);
+		this.solde = solde;
+		this.adresse = adresse;
+	}
     
     public Client(int id, String nom, String prenom, double solde, Adresse adresse) {
 		super(nom, prenom);
-		// TODO Auto-generated constructor stub
 		this.id = id;
 		this.solde = solde;
 		this.adresse = adresse;
@@ -26,7 +31,19 @@ public class Client extends Personne {
 		return solde;
 	}
 
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
+	
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
 	public void setSolde(double solde) {
 		this.solde = solde;
+	}
+	
+	public String toString(){
+		return "["+this.getId()+"] "+ this.getNom() + " " + this.getPrenom() +" "+ solde + " " + this.adresse.getCode_postal();
 	}
 }

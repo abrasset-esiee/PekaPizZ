@@ -5,10 +5,18 @@ public class Adresse {
 	private int id;
 	private String numero_rue;
 	private String nom_rue;
-	private char code_postal;
+	private String code_postal;
 	private String ville;
 	
-	public Adresse(int id, String numero_rue, String nom_rue, char code_postal, String ville) {
+	public Adresse(String numero_rue, String nom_rue, String code_postal, String ville) {
+		// TODO Auto-generated constructor stub
+		this.numero_rue = numero_rue;
+		this.nom_rue = nom_rue;
+		this.code_postal = code_postal;
+		this.ville = ville;
+	}
+	
+	public Adresse(int id, String numero_rue, String nom_rue, String code_postal, String ville) {
 		// TODO Auto-generated constructor stub
 		this.id = id;
 		this.numero_rue = numero_rue;
@@ -41,11 +49,11 @@ public class Adresse {
 		this.nom_rue = nom_rue;
 	}
 
-	public char getCode_postal() {
+	public String getCode_postal() {
 		return code_postal;
 	}
 
-	public void setCode_postal(char code_postal) {
+	public void setCode_postal(String code_postal) {
 		this.code_postal = code_postal;
 	}
 
