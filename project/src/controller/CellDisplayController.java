@@ -123,8 +123,15 @@ public class CellDisplayController {
 
 
 
-    public void setPizzaComponents(HashSet<String> list) {
+    public void setPizzaComponents(HashSet<Ingredient> list_ingredients) {
 
+    	HashSet<String> list = new HashSet<>();
+    	
+    	for(Ingredient ing : list_ingredients){
+    		list.add(ing.getNom());
+    		
+    		
+    	}
 		
 		pizz_back.setVisible(true);
         pizz_patate.setVisible((list.contains("Patate")));
@@ -173,11 +180,11 @@ public class CellDisplayController {
     	pizz_name.setText(s);
     }
 
-    void setIngredients(HashSet<String> list){
+    void setIngredients(HashSet<Ingredient> list){
         StringBuilder s = new StringBuilder();
 
-        for (String ingredient : list) {
-            s.append(ingredient +  ", ");
+        for (Ingredient ingredient : list) {
+            s.append(ingredient.getNom() + "(" + ingredient.getProvenance() +")" +  ", ");
 
         }
         s.delete(s.length() - 2, s.length());

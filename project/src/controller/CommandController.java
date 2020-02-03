@@ -1,6 +1,10 @@
 package controller;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 
@@ -18,6 +22,9 @@ public class CommandController {
     
     @FXML
     private Label prix_sup;
+    
+    @FXML
+    private Button pizz_back;
 
 
     @FXML
@@ -25,8 +32,8 @@ public class CommandController {
     	
     	
 
-        double trunc_inf = ((int)(commande.getPrix_base()* 1.33 * 100)) / 100.0;
-        double trunc_sup = ((int)(commande.getPrix_base()* 0.66 * 100)) / 100.0;
+        double trunc_sup = ((int)(commande.getPrix_base()* 1.33 * 100)) / 100.0;
+        double trunc_inf = ((int)(commande.getPrix_base()* 0.66 * 100)) / 100.0;
 
     	
     	pizzController.setName(commande.getNom());
@@ -38,6 +45,14 @@ public class CommandController {
     	
 
 
+    }
+    
+    
+    @FXML
+    public void back() throws IOException{
+    	Controller.changeScene(pizz_back.getScene(),"/View/pizz_display.fxml");
+    	
+    	
     }
 
 

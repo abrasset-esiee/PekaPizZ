@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CommandController">
+<GridPane style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CommandController">
    <columnConstraints>
       <ColumnConstraints hgrow="ALWAYS" />
       <ColumnConstraints hgrow="ALWAYS" />
@@ -30,15 +30,21 @@
          <children>
             <HBox>
                <children>
-            		<RadioButton mnemonicParsing="false" text="Bébé">
+            		<RadioButton mnemonicParsing="false" text="Bébé" textFill="WHITE">
                      <toggleGroup>
             				<ToggleGroup fx:id="size" />
                      </toggleGroup>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
                   </RadioButton>
-            		<Label fx:id="prix_inf" text="prix inf">
+            		<Label fx:id="prix_inf" text="prix inf" textFill="WHITE">
                      <padding>
                         <Insets left="10.0" />
-                     </padding></Label>
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
                </children>
                <padding>
                   <Insets bottom="10.0" />
@@ -46,7 +52,10 @@
             </HBox>
             <HBox>
                <children>
-            		<RadioButton mnemonicParsing="false" selected="true" text="Normal" toggleGroup="$size" />
+            		<RadioButton mnemonicParsing="false" selected="true" text="Normal" textFill="WHITE" toggleGroup="$size">
+                     <font>
+                        <Font size="15.0" />
+                     </font></RadioButton>
                </children>
                <padding>
                   <Insets bottom="10.0" />
@@ -54,11 +63,17 @@
             </HBox>
             <HBox>
                <children>
-            		<RadioButton mnemonicParsing="false" text="Senior" toggleGroup="$size" />
-            		<Label fx:id="prix_sup" text="prix sup">
+            		<RadioButton mnemonicParsing="false" text="Senior" textFill="WHITE" toggleGroup="$size">
+                     <font>
+                        <Font size="15.0" />
+                     </font></RadioButton>
+            		<Label fx:id="prix_sup" text="prix sup" textFill="WHITE">
                      <padding>
                         <Insets left="10.0" />
-                     </padding></Label>
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
                </children>
                <padding>
                   <Insets bottom="10.0" />
@@ -69,7 +84,7 @@
             <Insets left="30.0" right="30.0" top="30.0" />
          </padding>
       </VBox>
-		<Button mnemonicParsing="false" text="Back" GridPane.halignment="LEFT" />
+		<Button fx:id="pizz_back" mnemonicParsing="false" onAction="#back" styleClass="command" stylesheets="@../styles/style.css" text="Back" textFill="#a8a8a8" GridPane.halignment="LEFT" />
 		<Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="command" stylesheets="@../styles/style.css" text="Valider" textAlignment="CENTER" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER">
          <font>
             <Font size="36.0" />
