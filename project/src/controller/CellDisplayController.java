@@ -187,7 +187,7 @@ public class CellDisplayController {
             s.append(ingredient.getNom() + "(" + ingredient.getProvenance() +")" +  ", ");
 
         }
-        s.delete(s.length() - 2, s.length());
+        //s.delete(s.length() - 2, s.length());
 
         pizz_ingredients.setText(s.toString());
     }

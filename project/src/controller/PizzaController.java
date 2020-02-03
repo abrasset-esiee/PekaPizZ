@@ -7,10 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.Adresse;
-import Model.Client;
-import Model.Livreur;
-import Model.Pizza;
+import Model.*;
 import dao.AdresseDAO;
 import dao.JDBConnection;
 import dao.PizzaDAO;
@@ -21,7 +18,6 @@ public class PizzaController implements PizzaDAO {
 	private static final String FIND_PIZZA_C_REQ = "SELECT id_pizza, nom, prix_base FROM Pizza WHERE nom = ? AND prix_base = ?";
 	
 	private static final String PIZZA_CLIENT_REQ = "SELECT COUNT(id_livraison) as Nb_Pizza FROM Livraison WHERE id_client = ?";
-	
 	
 	@Override
 	public List<Pizza> findAll() throws SQLException {
@@ -34,18 +30,19 @@ public class PizzaController implements PizzaDAO {
 			
 			// émet une requête de type Select
 			ResultSet result = stmt.executeQuery();
-
+			IngredientController ingredientController = new IngredientController();
 			// affiche les lignes/colonnes du résultat
 			// (result.next() permet de passer à la ligne de résultat suivant)
 			while (result.next()) {
-				
-				a1.add(
-						new Pizza(
-								result.getInt("id_pizza"), 
-								result.getString("nom"), 
-								result.getDouble("prix_base")
-						)
-					);
+				Pizza pizza = new Pizza(
+					result.getInt("id_pizza"),
+					result.getString("nom"),
+					result.getDouble("prix_base")
+				);
+				for(Ingredient i : ingredientController.findByIDPizza(pizza.getId())) {
+					pizza.setIngredient(i);
+				}
+				a1.add(pizza);
 			}
 		} catch (SQLException e) {
 			System.err.println("Erreur d'exécution: " + e.getMessage());
