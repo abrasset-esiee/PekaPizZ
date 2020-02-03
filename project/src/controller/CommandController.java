@@ -3,8 +3,6 @@ package controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 
 import Model.Pizza;
 
@@ -35,8 +33,8 @@ public class CommandController {
     	pizzController.setIngredients(commande.getIngredients());
     	pizzController.setPrix(commande.getPrix_base());
     	pizzController.setPizzaComponents(commande.getIngredients());
-    	prix_inf.setText(String.valueOf(trunc_inf + " €"));
-    	prix_sup.setText(trunc_sup + " €");
+    	prix_inf.setText(String.valueOf(trunc_inf + " â‚¬"));
+    	prix_sup.setText(trunc_sup + " â‚¬");
     	
 
 
