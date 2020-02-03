@@ -1,31 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<Pane prefHeight="411.0" prefWidth="511.0"
-	xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="controller.CommandController">
-	<children>
-		<RadioButton layoutX="59.0" layoutY="159.0"
-			mnemonicParsing="false" text="Senior">
-			<toggleGroup>
-				<ToggleGroup fx:id="size" />
-			</toggleGroup>
-		</RadioButton>
-		<Button layoutX="14.0" layoutY="359.0" mnemonicParsing="false"
-			text="Back" />
-		<fx:include fx:id="subGui1" source="pizz_element_inside.fxml" />
-		<Button layoutX="444.0" layoutY="359.0" mnemonicParsing="false"
-			text="Valider" />
-		<RadioButton layoutX="59.0" layoutY="189.0"
-			mnemonicParsing="false" selected="true" text="Normal" toggleGroup="$size" />
-		<RadioButton layoutX="59.0" layoutY="221.0"
-			mnemonicParsing="false" text="Bébé" toggleGroup="$size" />
-		<Label layoutX="117.0" layoutY="159.0" text="prix sup" />
-		<Label layoutX="117.0" layoutY="221.0" text="prix inf" />
-	</children>
-</Pane>
+<GridPane xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CommandController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="ALWAYS" />
+      <ColumnConstraints hgrow="ALWAYS" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints valignment="TOP" vgrow="ALWAYS" />
+      <RowConstraints vgrow="NEVER" />
+      <RowConstraints vgrow="NEVER" />
+      <RowConstraints valignment="TOP" vgrow="ALWAYS" />
+      <RowConstraints vgrow="NEVER" />
+   </rowConstraints>
+   <children>
+		<fx:include fx:id="pizz" source="pizz_element_inside.fxml" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <VBox GridPane.columnSpan="2" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER">
+         <children>
+            <HBox>
+               <children>
+            		<RadioButton mnemonicParsing="false" text="Bébé">
+                     <toggleGroup>
+            				<ToggleGroup fx:id="size" />
+                     </toggleGroup>
+                  </RadioButton>
+            		<Label fx:id="prix_inf" text="prix inf">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </HBox>
+            <HBox>
+               <children>
+            		<RadioButton mnemonicParsing="false" selected="true" text="Normal" toggleGroup="$size" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </HBox>
+            <HBox>
+               <children>
+            		<RadioButton mnemonicParsing="false" text="Senior" toggleGroup="$size" />
+            		<Label fx:id="prix_sup" text="prix sup">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </VBox>
+		<Button mnemonicParsing="false" text="Back" GridPane.halignment="LEFT" />
+		<Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="command" stylesheets="@../styles/style.css" text="Valider" textAlignment="CENTER" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER">
+         <font>
+            <Font size="36.0" />
+         </font></Button>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</GridPane>

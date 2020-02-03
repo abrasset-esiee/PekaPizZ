@@ -22,7 +22,7 @@ public class ListViewController {
         pizz_list.setCellFactory(new PizzaCellFactory());
 
 
-        /*Pizza p = new Pizza();
+        Pizza p = new Pizza();
         p.setNom("Pizza1");
         p.setIngredient("olive");
         p.setPrix_base(15.32);
@@ -56,7 +56,7 @@ public class ListViewController {
         listViewData.add(p2);
         listViewData.add(p3);
         listViewData.add(p4);
-        listViewData.add(p5);*/
+        listViewData.add(p5);
 
 
         pizz_list.setItems(listViewData);

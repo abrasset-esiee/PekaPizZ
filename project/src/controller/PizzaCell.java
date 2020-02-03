@@ -19,39 +19,11 @@ import java.util.HashSet;
 public class PizzaCell extends ListCell<Pizza> {
 
     @FXML
-    Parent pizza_elem;
-
-    @FXML
-    private Group pizz_icon;
-
-    @FXML
-    private Group pizz_olive;
-    
-    @FXML
-    private Group pizz_back;
-    
-    @FXML
-    private Group pizz_egg;
-    
-    @FXML
-    private Label pizz_prix;
-    
-    @FXML
-    private Group pizz_poivron;
-    
-    @FXML
-    private Group pizz_mozarella;
-
-    @FXML
     private ListCell pizz_cell;
-
-
-
+    
     @FXML
-    private Text pizz_name;
+    private CellDisplayController pizza_elemController;
 
-    @FXML
-    private Text pizz_ingredients;
 
     Pizza pizza;
 
@@ -80,53 +52,26 @@ public class PizzaCell extends ListCell<Pizza> {
             setText(null);
             setContentDisplay(ContentDisplay.TEXT_ONLY);
         } else {
-            setPizzaComponents(item.getIngredients());
-            //A changer apres modele
-            pizz_name.setText(item.getNom());
-            pizz_ingredients.setText(getIngredientsString());
-            pizz_prix.setText(String.valueOf(item.getPrix_base()) + " €");
+
+        	pizza_elemController.setPizzaComponents(item.getIngredients());
+        	pizza_elemController.setName(item.getNom());
+            pizza_elemController.setIngredients(item.getIngredients());
+            pizza_elemController.setPrix(item.getPrix_base());
+
             setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
         }
     }
 
 
-    private void setPizzaComponents(HashSet<String> list) {
-
-    		
-    		pizz_back.setVisible(true);
-       
-        	pizz_olive.setVisible(list.contains("olive"));
-
-    		pizz_egg.setVisible(list.contains("oeuf"));
- 
-    		pizz_poivron.setVisible(list.contains("poivrons"));
-
-    		pizz_mozarella.setVisible(list.contains("mozarella"));
-
-    }
+    
     @FXML
     public void onClickCell() throws IOException {
         CommandController.commande = pizza;
 
         pizz_cell.getScene().setRoot(new FXMLLoader(getClass().getResource("/View/commande.fxml")).load());
-        System.out.println(this.isSelected());
-        System.out.println("test click : " + pizza.getNom());
-        System.out.println(this.isSelected());
 
-    }
-    
-    String getIngredientsString(){
-    	
-    	
-    	StringBuilder s = new StringBuilder();
 
-        for (String ingredient : pizza.getIngredients()) {
-            s.append(ingredient + ", ");
+        System.out.println("choice : " + pizza.getNom());
 
-        }
-        s.delete(s.length() - 2, s.length());
-
-        return s.toString(); 
-    	
     }
 }
