@@ -5,6 +5,10 @@ public class Taille {
 	private int id;
 	private double ratio;
 	
+	public Taille(double ratio) {
+		this.ratio = ratio;
+	}
+	
 	public Taille(int id, double ratio) {
 		// TODO Auto-generated constructor stub
 		this.id = id;

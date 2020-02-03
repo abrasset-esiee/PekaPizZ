@@ -2,13 +2,13 @@ package Model;
 
 public class Vehicule {
 
-	private char immatriculation;
+	private String immatriculation;
 	private boolean voiture;
 	private String couleur;
 	private String modele;
 	private int annee;
 	
-	public Vehicule(char immatriculation, boolean voiture, String couleur, String modele, int annee) {
+	public Vehicule(String immatriculation, boolean voiture, String couleur, String modele, int annee) {
 		// TODO Auto-generated constructor stub
 		this.immatriculation = immatriculation;
 		this.voiture = voiture;
@@ -17,11 +17,11 @@ public class Vehicule {
 		this.annee = annee;
 	}
 
-	public char getImmatriculation() {
+	public String getImmatriculation() {
 		return immatriculation;
 	}
 
-	public void setImmatriculation(char immatriculation) {
+	public void setImmatriculation(String immatriculation) {
 		this.immatriculation = immatriculation;
 	}
 

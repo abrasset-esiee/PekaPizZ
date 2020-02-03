@@ -7,14 +7,20 @@ public class Pizza {
 	private int id;
 	private String nom;
 	private double prix_base;
-	private HashSet<String> ingredients;
+	private HashSet<Ingredient> ingredients;
+	
+	public Pizza(String nom, double prix_base) {
+		this.nom = nom;
+		this.prix_base = prix_base;
+		this.ingredients = new HashSet<Ingredient>();
+	}
 	
 	public Pizza(int id, String nom, double prix_base) {
 		// TODO Auto-generated constructor stub
 		this.id = id;
 		this.nom = nom;
 		this.prix_base = prix_base;
-		this.ingredients = new HashSet<String>();
+		this.ingredients = new HashSet<Ingredient>();
 	}
 
 	public int getId() {
@@ -41,11 +47,11 @@ public class Pizza {
 		this.prix_base = prix_base;
 	}
 	
-	public void setIngredient(String ingredient) {
+	public void setIngredient(Ingredient ingredient) {
 		this.ingredients.add(ingredient);
 	}
 	
-	public HashSet<String> getIngredients() {
+	public HashSet<Ingredient> getIngredients() {
 		return this.ingredients;
 	}
 }
