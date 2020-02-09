@@ -3,6 +3,7 @@ package dao;
 import java.sql.SQLException;
 
 import Model.Livreur;
+import Model.Vehicule;
 
 public interface LivreurDAO {
 	/**
@@ -25,4 +26,11 @@ public interface LivreurDAO {
 	 * @return obj
 	 */
 	public abstract Livreur findMoreLate() throws SQLException;
+	
+	/**
+	 * Permet de récupérer un Livreur via son nombre de livraison à l'heure
+	 * @param 
+	 * @return obj
+	 */
+	public abstract Livreur findBest() throws SQLException;
 }
