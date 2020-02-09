@@ -152,14 +152,7 @@
          <Tab text="Clients">
              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                  <TableView fx:id="list_clients" prefHeight="371.0" prefWidth="600.0">
-                     <columns>
-                         <TableColumn prefWidth="75.0" text="ID" />
-                         <TableColumn prefWidth="75.0" text="Nom" />
-                         <TableColumn prefWidth="75.0" text="Prenom" />
-                         <TableColumn prefWidth="75.0" text="Solde" />
-                         <TableColumn prefWidth="92.0" text="Nb Commande" />
-                         <TableColumn prefWidth="205.0" text="Adresse" />
-                     </columns>
+
                  </TableView>
              </AnchorPane>
          </Tab>
