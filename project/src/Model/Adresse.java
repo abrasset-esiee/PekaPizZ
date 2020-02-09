@@ -64,4 +64,9 @@ public class Adresse {
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
+	
+	public String toString(){
+
+		return numero_rue + " " + nom_rue + " " +code_postal + " " + ville;
+	}
 }
