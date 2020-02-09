@@ -32,6 +32,9 @@ public class Controller {
     @FXML
     private Group pizza_icon;
 
+    @FXML
+    private Button manage_mode;
+
 
 
     
@@ -78,6 +81,13 @@ public class Controller {
     public void setScene_main() throws Exception {
 
         changeScene(getScene(), "/View/main.fxml");
+
+    }
+
+   @FXML
+    public void setScene_stats() throws Exception {
+
+        changeScene(getScene(), "/View/stats.fxml");
 
     }
 
