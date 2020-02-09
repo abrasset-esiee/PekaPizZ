@@ -62,7 +62,7 @@ public class Client extends Personne {
 	}
 	
 	public String toString(){
-		return "["+this.getId()+"] "+ this.getNom() + " " + this.getPrenom() +" "+ solde + " " + this.adresse.getCode_postal();
+		return "["+getId()+"] "+ getNom() + " " + getPrenom() +" "+ getSolde();
 	}
 
 
@@ -71,7 +71,5 @@ public class Client extends Personne {
 	        return true;
 	    else
 	        return false;
-
-
     }
 }
