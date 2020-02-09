@@ -42,4 +42,6 @@ public interface ClientDAO {
 	 * @param obj
 	 */
 	public abstract Client findBest() throws SQLException;
+	
+	public abstract List<Client> moreAVG() throws SQLException;
 }

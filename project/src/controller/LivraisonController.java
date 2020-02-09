@@ -24,6 +24,8 @@ public class LivraisonController implements LivraisonDAO {
 	
 	private static final String TIMEDIFF_DELIVERY_REQ = "SELECT TIMEDIFF(date_livraison, date_commande) as time_Diff FROM Livraison WHERE id_livraison = ?";
 	
+	private static final String AVG_PRICE_SIZE_PIZZA = "SELECT AVG(ratio * p.prix_base) as moyenne FROM Livraison l INNER JOIN Pizza p ON p.id_pizza = l.id_pizza INNER JOIN Taille t ON l.id_taille = t.id_taille";
+	
 	@Override
 	public List<Livraison> findAllByID(int id) throws SQLException {
 		Connection con = null;
@@ -249,5 +251,29 @@ public class LivraisonController implements LivraisonDAO {
 		}
 		
 		return l1;
+	}
+	
+	@Override
+	public float averagePizzaSize() throws SQLException {
+		Connection con = null;
+		float average = 0.0F;
+		
+		try {
+			con = JDBConnection.getConnection();
+			PreparedStatement stmt = con.prepareStatement(AVG_PRICE_SIZE_PIZZA);
+			
+			// émet une requête de type Select
+			ResultSet result = stmt.executeQuery();
+		
+			// affiche les lignes/colonnes du résultat
+			// (result.next() permet de passer à la ligne de résultat suivant)	
+			result.next();
+			
+			average = result.getFloat("moyenne");
+		} catch (SQLException e) {
+			System.err.println("Erreur d'exécution: " + e.getMessage());
+		}
+		
+		return average;
 	}
 }

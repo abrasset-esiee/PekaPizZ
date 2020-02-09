@@ -13,13 +13,16 @@ import Model.Pizza;
 import dao.AdresseDAO;
 import dao.ClientDAO;
 import dao.JDBConnection;
+import dao.LivraisonDAO;
+import dao.LivreurDAO;
 import dao.PizzaDAO;
 
 public class ClientController implements ClientDAO {
 	private static final String FINDALL_CLIENT_REQ = "SELECT id_client, nom, prenom, solde, id_adresse FROM Client";
 	private static final String FIND_CLIENT_REQ = "SELECT id_client, nom, prenom, solde, id_adresse FROM Client WHERE id_client = ?";
-	private static final String FIND_BEST_CLIENT_REQ = "SELECT id_client"
-			+ " FROM (SELECT l.id_client, COUNT(l.id_client) nbCommande FROM Livraison l GROUP BY l.id_client) as x WHERE x.nbCommande = (SELECT MAX(nbCommande) FROM (SELECT m.id_client, COUNT(m.id_client) nbCommande FROM Livraison m GROUP BY m.id_client) as y)";
+	private static final String FIND_BEST_CLIENT_REQ = "SELECT id_client FROM (SELECT l.id_client, COUNT(l.id_client) nbCommande FROM Livraison l GROUP BY l.id_client) as x WHERE x.nbCommande = (SELECT MAX(nbCommande) FROM (SELECT m.id_client, COUNT(m.id_client) nbCommande FROM Livraison m GROUP BY m.id_client) as y)";
+	
+	private static final String CLIENT_MORE_AVG = "SELECT DISTINCT(l.id_client) FROM Livraison l INNER JOIN Pizza p ON p.id_pizza = l.id_pizza INNER JOIN Taille t ON t.id_taille = l.id_taille WHERE (p.prix_base * t.ratio) > ?";
 	
 	private static final String CREATE_CLIENT = "INSERT INTO Client (nom, prenom, solde, id_adresse) VALUES (?, ?, ?, ?)";
 	private static final String UPDATE_CLIENT = "UPDATE Client SET nom = ?, prenom = ?, solde = ?, id_adresse = ? WHERE id_client = ?";
@@ -200,4 +203,40 @@ public class ClientController implements ClientDAO {
 		return c1;
 	}
 
+	@Override
+	public List<Client> moreAVG() throws SQLException {
+		Connection con = null;
+		ArrayList<Client> l1 = new ArrayList<Client>();
+		float avg = 0.0F;
+		
+		try {
+			con = JDBConnection.getConnection();
+			PreparedStatement stmt = con.prepareStatement(CLIENT_MORE_AVG);
+			
+			LivraisonDAO daoLivraison = new LivraisonController();
+			avg = daoLivraison.averagePizzaSize();
+			
+			stmt.setFloat(1, avg);
+			System.out.println(avg);
+			
+			// émet une requête de type Select
+			ResultSet result = stmt.executeQuery();
+
+			// affiche les lignes/colonnes du résultat
+			// (result.next() permet de passer à la ligne de résultat suivant)
+			while (result.next()) {
+				
+				ClientDAO daoClient = new ClientController();	
+				Client client = daoClient.findByID(result.getInt("id_client"));
+				
+				l1.add(
+					client
+				);
+			}
+		} catch (SQLException e) {
+			System.err.println("Erreur d'exécution: " + e.getMessage());
+		}
+		
+		return l1;		
+	}
 }
