@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 import Model.Ingredient;
@@ -30,7 +31,7 @@ public class CellDisplayController {
     
     @FXML
     private Group pizz_mozarella;
-    
+
     @FXML
     private Text pizz_name;
 
@@ -126,53 +127,71 @@ public class CellDisplayController {
     public void setPizzaComponents(HashSet<Ingredient> list_ingredients) {
 
     	HashSet<String> list = new HashSet<>();
-    	
+
+        HashMap<String,Group> dict = new HashMap<>();
+        dict.put("Patate",pizz_patate);
+        dict.put("Oignons",pizz_oignons);
+        dict.put("Creme fraiche",pizz_creme);
+        dict.put("Poulet",pizz_chicken);
+        dict.put("Boeuf",pizz_boeuf);
+        dict.put("pizz_reblo",pizz_patate);
+        dict.put("Reblochon",pizz_reblo);
+        dict.put("Poivrons",pizz_poivron);
+        dict.put("Champignons",pizz_champi);
+        dict.put("Mozarella",pizz_mozarella);
+        dict.put("Oeuf",pizz_egg);
+        dict.put("Ananas",pizz_ananas);
+        dict.put("Basilic",pizz_ananas);
+        dict.put("Ananas",pizz_ananas);
+        dict.put("Ananas",pizz_basilic);
+        dict.put("Olive",pizz_olive);
+        dict.put("Artichaud",pizz_artichaut);
+        dict.put("Chorizo",pizz_chorizo);
+        dict.put("Peperonni",pizz_peperonni);
+        dict.put("Viande haché",pizz_hache);
+        dict.put("Romarins",pizz_romarin);
+        dict.put("Ail",pizz_ail);
+        dict.put("Origan",pizz_origan);
+        dict.put("Anchois",pizz_anchois);
+        dict.put("Jambon",pizz_jambon);
+        dict.put("Parmesan",pizz_parmesan);
+        dict.put("Chèvres",pizz_chevre);
+        dict.put("Piment",pizz_piment);
+        dict.put("Emental",pizz_emmental);
+        dict.put("Saumons",pizz_saumon);
+        dict.put("Lardons",pizz_lardon);
+        dict.put("Merguez",pizz_merguez);
+        dict.put("Salami",pizz_salami);
+        dict.put("Kangourou",pizz_kangourou);
+        dict.put("Thon",pizz_thon);
+        dict.put("Roquefort",pizz_roquefort);
+        dict.put("Gruyère",pizz_gruyere);
+        dict.put("Gruyère",pizz_gruyere);
+        dict.put("Câpres",pizz_capres);
+        dict.put("Viande de grison",pizz_grison);
+
+
     	for(Ingredient ing : list_ingredients){
     		list.add(ing.getNom());
-    		
     		
     	}
 		
 		pizz_back.setVisible(true);
-        pizz_patate.setVisible((list.contains("Patate")));
-        pizz_tomatoes.setVisible(list.contains("Tomate"));
-        pizz_oignons.setVisible(list.contains("Oignons"));
-        pizz_creme.setVisible(list.contains("Creme fraiche"));
-        pizz_chicken.setVisible(list.contains("Poulet"));
-        pizz_boeuf.setVisible(list.contains("Boeuf"));
-        pizz_reblo.setVisible(list.contains("Reblochon"));
-        pizz_poivron.setVisible(list.contains("Poivrons"));
-        pizz_champi.setVisible(list.contains("Champignons"));
+
+        for(String key : dict.keySet()){
+            Group ingredient = dict.get(key);
+            if(list.contains(key))
+                ingredient.setVisible(true);
+            else{
+                ingredient.setVisible(false);
+                pizz_icon.getChildren().remove(ingredient);
+            }
+
+        }
+
         //salade
-        pizz_mozarella.setVisible(list.contains("Mozarella"));
-        pizz_egg.setVisible(list.contains("Oeuf"));
-        pizz_ananas.setVisible(list.contains("Ananas"));
-        pizz_basilic.setVisible(list.contains("Basilic"));
-        pizz_olive.setVisible(list.contains("Olive"));
-        pizz_artichaut.setVisible(list.contains("Artichaud"));
-        pizz_chorizo.setVisible(list.contains("Chorizo"));
-        pizz_peperonni.setVisible(list.contains("Peperonni"));
-        pizz_hache.setVisible(list.contains("Viande haché"));
-        pizz_romarin.setVisible(list.contains("Romarins"));
-        pizz_ail.setVisible(list.contains("Ail"));
-        pizz_origan.setVisible(list.contains("Origan"));
-        pizz_anchois.setVisible(list.contains("Anchois"));
-        pizz_jambon.setVisible(list.contains("Jambon"));
-        pizz_parmesan.setVisible(list.contains("Parmesan"));
-        pizz_chevre.setVisible(list.contains("Chèvres"));
-        pizz_piment.setVisible(list.contains("Piment"));
         //gorgonzolla
-        pizz_emmental.setVisible(list.contains("Emental"));
-        pizz_saumon.setVisible(list.contains("Saumons"));
-        pizz_lardon.setVisible(list.contains("Lardons"));
-        pizz_merguez.setVisible(list.contains("Merguez"));
-        pizz_salami.setVisible(list.contains("Salami"));
-        pizz_kangourou.setVisible(list.contains("Kangourou"));
-        pizz_thon.setVisible(list.contains("Thon"));
-        pizz_roquefort.setVisible(list.contains("Roquefort"));
-        pizz_gruyere.setVisible(list.contains("Gruyère"));
-        pizz_capres.setVisible(list.contains("Câpres"));
-        pizz_grison.setVisible(list.contains("Viande de grison"));
+
     }
     
     void setName(String s){
