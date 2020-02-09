@@ -148,3 +148,5 @@ WHERE immatriculation NOT IN (
 );
 -- Nombre de commande par client
 SELECT id_client, COUNT(id_livraison) FROM Livraison GROUP BY id_client;
+-- Prix moyen des pizzas en fonction de leur taille
+SELECT AVG(ratio * p.prix_base) as moyenne FROM Livraison l INNER JOIN Pizza p ON p.id_pizza = l.id_pizza INNER JOIN Taille t ON l.id_taille = t.id_taille;
