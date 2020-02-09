@@ -12,10 +12,6 @@ public class Client extends Personne {
     private DoubleProperty solde;
     private Adresse adresse;
 
-    public Client(Client client){
-        this(client.getNom(),client.getPrenom(),client.getSolde(),client.getAdresse());
-
-    }
     public Client(String nom, String prenom, double solde, Adresse adresse) {
 		super(nom, prenom);
 		this.solde = new SimpleDoubleProperty(solde);
@@ -65,11 +61,4 @@ public class Client extends Personne {
 		return "["+getId()+"] "+ getNom() + " " + getPrenom() +" "+ getSolde();
 	}
 
-
-    public boolean equals(Object c){
-	    if(this.id == ((Client)c).id)
-	        return true;
-	    else
-	        return false;
-    }
 }

@@ -56,10 +56,15 @@ public class StatsController {
     void initialize(){
         try {
             livreur_worst.setText(new LivreurController().findMoreLate().toString());
+            livreur_best.setText(new LivreurController().findBest().toString());
             vehicule_worst.setText(new VehiculeController().findMoreLate().toString());
+            vehicule_best.setWrapText(true);
+            vehicule_worst.setWrapText(true);
+            vehicule_best.setText(new VehiculeController().findBest().toString());
             pizza_best.setText(new PizzaController().findBestSelling().toString());
             ingredient_best.setText((new IngredientController().findBest().toString()));
             client_best.setText((new ClientController().findBest().toString()));
+            pizza_avg.setText(String.valueOf(new LivraisonController().averagePizzaSize()).substring(0,5) + " €");
 
 
 
