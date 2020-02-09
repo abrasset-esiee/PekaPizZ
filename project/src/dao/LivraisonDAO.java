@@ -2,7 +2,9 @@ package dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.HashMap;
 
+import Model.Client;
 import Model.Livraison;
 
 public interface LivraisonDAO {
@@ -50,5 +52,5 @@ public interface LivraisonDAO {
 	 * @param obj
 	 * @return
 	 */
-	public abstract List<int> nbCommande(int id) throws SQLException;
+	public abstract HashMap<Client, Integer> nbCommandeAll() throws SQLException;
 }
