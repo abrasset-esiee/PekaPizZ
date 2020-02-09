@@ -54,4 +54,8 @@ public class Pizza {
 	public HashSet<Ingredient> getIngredients() {
 		return this.ingredients;
 	}
+	
+	public String toString(){
+		return "["+this.getId()+"] "+ this.getNom() + " " + this.getPrix_base() + " " + this.getIngredients();
+	}
 }

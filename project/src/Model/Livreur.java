@@ -22,4 +22,7 @@ public class Livreur extends Personne {
 		this.id = id;
 	}
     
+	public String toString(){
+		return "["+this.getId()+"] "+ this.getNom() + " " + this.getPrenom();
+	}
 }

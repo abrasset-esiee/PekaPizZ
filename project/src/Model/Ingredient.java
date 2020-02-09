@@ -33,5 +33,7 @@ public class Ingredient {
 		this.provenance = provenance;
 	}
 	
-	
+	public String toString(){
+		return "["+this.getId()+"] "+ this.getNom() + " " + this.getProvenance();
+	}
 }

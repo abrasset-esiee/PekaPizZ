@@ -18,4 +18,11 @@ public interface LivreurDAO {
 	 * @return obj
 	 */
 	public abstract Livreur findByID(int id) throws SQLException;
+	
+	/**
+	 * Permet de récupérer un Livreur via son nombre de retards cumulés
+	 * @param 
+	 * @return obj
+	 */
+	public abstract Livreur findMoreLate() throws SQLException;
 }

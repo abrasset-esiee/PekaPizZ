@@ -44,4 +44,11 @@ public interface LivraisonDAO {
 	 * @return
 	 */
 	public abstract String timeByDelivery(Livraison livraison) throws SQLException;
+	
+	/**
+	 * Permet de récupérer le nombre de commandes par Client
+	 * @param obj
+	 * @return
+	 */
+	public abstract List<int> nbCommande(int id) throws SQLException;
 }

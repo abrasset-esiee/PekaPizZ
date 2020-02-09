@@ -57,4 +57,8 @@ public class Vehicule {
 		this.annee = annee;
 	}
 	
+	public String toString(){
+		return "["+this.getImmatriculation()+"] "+ this.getModele();
+	}
+	
 }

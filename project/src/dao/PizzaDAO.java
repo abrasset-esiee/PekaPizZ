@@ -30,9 +30,29 @@ public interface PizzaDAO {
 
 	/**
 	 * Permet de récupérer toutes les pizzas
-	 * @return
+	 * @return List<obj>
 	 * @throws SQLException
 	 */
-	List<Pizza> findAll() throws SQLException;
+	public abstract List<Pizza> findAll() throws SQLException;
 
+	/**
+	 * Permet de récupérer un objet Pizza via son nombre de commandes maximum
+	 * @return obj
+	 * @throws SQLException
+	 */
+	public abstract Pizza findBestSelling() throws SQLException;
+	
+	/**
+	 * Permet de récupérer un objet Pizza via son nombre de commandes minimum
+	 * @return obj
+	 * @throws SQLException
+	 */
+	public abstract Pizza findBadSelling() throws SQLException;
+	
+	/**
+	 * Permet de récupérer un objet Pizza qui n'a jamais eu de commande
+	 * @return obj
+	 * @throws SQLException
+	 */
+	public abstract Pizza findNeverSold() throws SQLException;
 }
