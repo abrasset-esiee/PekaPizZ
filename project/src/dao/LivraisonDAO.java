@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import Model.Client;
 import Model.Livraison;
+import Model.Livreur;
 
 public interface LivraisonDAO {
 	/**
@@ -53,4 +54,11 @@ public interface LivraisonDAO {
 	 * @return
 	 */
 	public abstract HashMap<Client, Integer> nbCommandeAll() throws SQLException;
+	
+	/**
+	 * Permet de récupérer la moyenne du prix des pizzas commandés en fonction de leur taille
+	 * @param 
+	 * @return obj
+	 */
+	public abstract float averagePizzaSize() throws SQLException;
 }
