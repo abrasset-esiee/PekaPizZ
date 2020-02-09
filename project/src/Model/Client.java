@@ -1,33 +1,48 @@
 package Model;
 
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+
+
 public class Client extends Personne {
 
-	private int id;
-    private double solde;
+	private IntegerProperty id;
+    private DoubleProperty solde;
     private Adresse adresse;
+
     
     public Client(String nom, String prenom, double solde, Adresse adresse) {
 		super(nom, prenom);
-		this.solde = solde;
+		this.solde = new SimpleDoubleProperty(solde);
 		this.adresse = adresse;
 	}
     
     public Client(int id, String nom, String prenom, double solde, Adresse adresse) {
 		super(nom, prenom);
-		this.id = id;
-		this.solde = solde;
+		this.id = new SimpleIntegerProperty(id);
+		this.solde = new SimpleDoubleProperty(solde);
 		this.adresse = adresse;
 	}
 
 	public int getId() {
-		return id;
+		return id.get();
+	}
+
+	public IntegerProperty idProperty(){
+    	return id;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.id.set(id);
 	}
 
 	public double getSolde() {
+		return solde.get();
+	}
+
+	public DoubleProperty soldeProperty(){
 		return solde;
 	}
 
@@ -40,7 +55,7 @@ public class Client extends Personne {
 	}
 
 	public void setSolde(double solde) {
-		this.solde = solde;
+		this.solde.set(solde);
 	}
 	
 	public String toString(){
