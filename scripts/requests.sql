@@ -34,6 +34,23 @@ WHERE x.nbRetard = (
         GROUP BY m.id_livreur
     ) as y
 );
+-- Livreur au plus grand nombre a l'heure
+SELECT *
+FROM (
+    SELECT l.id_livreur, COUNT(l.id_livreur) nbAlheure
+    FROM Livraison l
+    WHERE TIMEDIFF(l.date_livraison, l.date_commande) <= "00:30:00"
+    GROUP BY l.id_livreur
+) as x
+WHERE x.nbAlheure = (
+    SELECT MAX(nbAlheure)
+    FROM (
+        SELECT m.id_livreur, COUNT(m.id_livreur) nbAlheure
+        FROM Livraison m
+        WHERE TIMEDIFF(m.date_livraison, m.date_commande) <= "00:30:00"
+        GROUP BY m.id_livreur
+    ) as y
+);
 -- Vehicule ayant le plus de retard
 SELECT *
 FROM (
@@ -48,6 +65,23 @@ WHERE x.nbRetard = (
         SELECT m.immatriculation, COUNT(m.immatriculation) nbRetard
         FROM Livraison m
         WHERE TIMEDIFF(m.date_livraison, m.date_commande) > "00:30:00"
+        GROUP BY m.immatriculation
+    ) as y
+);
+-- Vehicule ayant le plus de livraison à l'heure
+SELECT *
+FROM (
+    SELECT l.immatriculation, COUNT(l.immatriculation) nbAlheure
+    FROM Livraison l
+    WHERE TIMEDIFF(l.date_livraison, l.date_commande) <= "00:30:00"
+    GROUP BY l.immatriculation
+) as x
+WHERE x.nbAlheure = (
+    SELECT MAX(nbAlheure)
+    FROM (
+        SELECT m.immatriculation, COUNT(m.immatriculation) nbAlheure
+        FROM Livraison m
+        WHERE TIMEDIFF(m.date_livraison, m.date_commande) <= "00:30:00"
         GROUP BY m.immatriculation
     ) as y
 );
