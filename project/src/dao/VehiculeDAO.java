@@ -20,6 +20,13 @@ public interface VehiculeDAO {
 	public abstract Vehicule findMoreLate() throws SQLException;
 	
 	/**
+	 * Permet de récupérer un Vehicule via son nombre de livraison à l'heure
+	 * @param 
+	 * @return obj
+	 */
+	public abstract Vehicule findBest() throws SQLException;
+	
+	/**
 	 * Permet de récupérer un objet Vehicule qui n'a jamais servi
 	 * @return obj
 	 * @throws SQLException

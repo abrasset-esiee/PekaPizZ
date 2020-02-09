@@ -34,6 +34,23 @@ WHERE x.nbRetard = (
         GROUP BY m.id_livreur
     ) as y
 );
+-- Livreur au plus grand nombre a l'heure
+SELECT *
+FROM (
+    SELECT l.id_livreur, COUNT(l.id_livreur) nbAlheure
+    FROM Livraison l
+    WHERE TIMEDIFF(l.date_livraison, l.date_commande) <= "00:30:00"
+    GROUP BY l.id_livreur
+) as x
+WHERE x.nbAlheure = (
+    SELECT MAX(nbAlheure)
+    FROM (
+        SELECT m.id_livreur, COUNT(m.id_livreur) nbAlheure
+        FROM Livraison m
+        WHERE TIMEDIFF(m.date_livraison, m.date_commande) <= "00:30:00"
+        GROUP BY m.id_livreur
+    ) as y
+);
 -- Vehicule ayant le plus de retard
 SELECT *
 FROM (
@@ -48,6 +65,23 @@ WHERE x.nbRetard = (
         SELECT m.immatriculation, COUNT(m.immatriculation) nbRetard
         FROM Livraison m
         WHERE TIMEDIFF(m.date_livraison, m.date_commande) > "00:30:00"
+        GROUP BY m.immatriculation
+    ) as y
+);
+-- Vehicule ayant le plus de livraison à l'heure
+SELECT *
+FROM (
+    SELECT l.immatriculation, COUNT(l.immatriculation) nbAlheure
+    FROM Livraison l
+    WHERE TIMEDIFF(l.date_livraison, l.date_commande) <= "00:30:00"
+    GROUP BY l.immatriculation
+) as x
+WHERE x.nbAlheure = (
+    SELECT MAX(nbAlheure)
+    FROM (
+        SELECT m.immatriculation, COUNT(m.immatriculation) nbAlheure
+        FROM Livraison m
+        WHERE TIMEDIFF(m.date_livraison, m.date_commande) <= "00:30:00"
         GROUP BY m.immatriculation
     ) as y
 );
@@ -114,3 +148,7 @@ WHERE immatriculation NOT IN (
 );
 -- Nombre de commande par client
 SELECT id_client, COUNT(id_livraison) FROM Livraison GROUP BY id_client;
+-- Prix moyen des pizzas en fonction de leur taille
+SELECT AVG(ratio * p.prix_base) as moyenne FROM Livraison l INNER JOIN Pizza p ON p.id_pizza = l.id_pizza INNER JOIN Taille t ON l.id_taille = t.id_taille;
+-- Clients ayant commandé plus cher que la moyenne des commandes
+SELECT DISTINCT(livraison.id_client) FROM livraison INNER JOIN pizza ON pizza.id_pizza = livraison.id_pizza INNER JOIN taille ON taille.id_taille = livraison.id_taille WHERE pizza.prix_base * taille.ratio > 15
