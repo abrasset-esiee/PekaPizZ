@@ -14,23 +14,23 @@ public class JDBConnection {
 	// Adresse locale ou distante (192.168.1.1)
 	private static final String IP = "localhost";
 	// Port d'accès à la base
-	private static final String PORT = "3308";
+	private static final String PORT = "3306";
 	// Nom de la base de données à accéder
-	private static final String BASENAME = "pekapizz";
+	private static final String BASENAME = "Pekapizz";
 	// Obligatoire en MySQL 8
 	private static final String END = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
 	public static Connection connection = null;
 	// Informations User BDD
 	private static final String USER = "root";
-	private static final String PASSWORD = "";
+	private static final String PASSWORD = "Pokemon37*";
 
 	public static Connection getConnection() throws SQLException {
-		if(connection==null){
+		if(connection == null){
 			String url = URL + IP + ":" + PORT + "/" + BASENAME + END;
 			System.out.println("connexion à l'URL: " + url);
 			return connection = DriverManager.getConnection(url, USER, PASSWORD);
-		}else
+		} else
 			return connection;
 	}
 
