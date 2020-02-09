@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import Model.*;
@@ -14,6 +15,8 @@ import dao.*;
 public class LivraisonController implements LivraisonDAO {
 	private static final String FINDALL_DELIVERY_REQ = "SELECT id_livraison, id_livreur, id_pizza, immatriculation, id_taille, id_client, date_commande, date_livraison FROM Livraison WHERE id_client = ?";
 	private static final String FIND_DELIVERY_REQ = "SELECT id_livraison, id_livreur, id_pizza, immatriculation, id_taille, id_client, date_commande, date_livraison FROM Livraison WHERE id_livraison = ?";
+	
+	private static final String NB_COMMANDE_ALL_REQ = "SELECT id_client, COUNT(id_livraison) as nbCommande FROM Livraison GROUP BY id_client";
 	
 	private static final String CREATE_DELIVERY = "INSERT INTO Livraison (id_livraison, id_livreur, id_pizza, immatriculation, id_taille, id_client, date_commande, date_livraison) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 	private static final String UPDATE_DELIVERY = "UPDATE Livraison SET id_livraison = ?, id_livreur = ?, id_pizza = ?, immatriculation = ?, id_taille = ?, id_client = ?, date_commande = ?, date_livraison = ? WHERE id_livraison = ?";
@@ -215,5 +218,36 @@ public class LivraisonController implements LivraisonDAO {
 		}
 		
 		return time;
+	}
+	
+	@Override
+	public HashMap<Client, Integer> nbCommandeAll() throws SQLException {
+		Connection con = null;
+		HashMap<Client, Integer> l1 = new HashMap<Client, Integer>();
+		
+		try {
+			con = JDBConnection.getConnection();
+			PreparedStatement stmt = con.prepareStatement(NB_COMMANDE_ALL_REQ);
+			
+			// émet une requête de type Select
+			ResultSet result = stmt.executeQuery();
+		
+			// affiche les lignes/colonnes du résultat
+			// (result.next() permet de passer à la ligne de résultat suivant)
+			while (result.next()) {							
+				// find for "Client"
+				ClientDAO daoClient = new ClientController();
+				Client client = daoClient.findByID(result.getInt("id_client"));
+				
+				l1.put(
+					client,
+					result.getInt("nbCommande")
+				);
+			}
+		} catch (SQLException e) {
+			System.err.println("Erreur d'exécution: " + e.getMessage());
+		}
+		
+		return l1;
 	}
 }
