@@ -8,30 +8,34 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 // Copier coller cette classe, la renommer JDBConnection et compléter les informations suivantes
-public class JDBConnectionExample {
+public class JDBConnection {
 	// Package de connexion et type de base de données
 	private static final String URL = "jdbc:mysql://";
 	// Adresse locale ou distante (192.168.1.1)
 	private static final String IP = "localhost";
 	// Port d'accès à la base
-	private static final String PORT = "3306";
+	private static final String PORT = "3308";
 	// Nom de la base de données à accéder
-	private static final String BASENAME = "";
+	private static final String BASENAME = "pekapizz";
 	// Obligatoire en MySQL 8
 	private static final String END = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
+	public static Connection connection = null;
 	// Informations User BDD
-	private static final String USER = "";
+	private static final String USER = "root";
 	private static final String PASSWORD = "";
 
-	private static Connection getConnection(String ip, String base) throws SQLException {
-		String url = URL + IP + ":" + PORT + "/" + BASENAME + END;
-		System.out.println("connexion à l'URL: " + url);
-		return DriverManager.getConnection(url, USER, PASSWORD);
+	public static Connection getConnection() throws SQLException {
+		if(connection==null){
+			String url = URL + IP + ":" + PORT + "/" + BASENAME + END;
+			System.out.println("connexion à l'URL: " + url);
+			return connection = DriverManager.getConnection(url, USER, PASSWORD);
+		}else
+			return connection;
 	}
 
 	public static void main(String[] args) {
-		try (Connection con = getConnection(IP, BASENAME);
+		try (Connection con = getConnection();
 				Statement stmt = con.createStatement();)
 		{
 			// requête sql
