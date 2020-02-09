@@ -1,7 +1,11 @@
 package controller;
 
+import Model.Adresse;
 import Model.Client;
-import Model.Livraison;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -10,6 +14,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class StatsController {
     @FXML
@@ -55,9 +64,15 @@ public class StatsController {
 
 
 
-            ObservableList<Client> ol = FXCollections.observableArrayList();
+            ObservableList<ClientTable> ol = FXCollections.observableArrayList();
+            HashMap<Client,Integer> nb = new LivraisonController().nbCommandeAll();
 
-            ol.addAll( new ClientController().findAll());
+            for(Map.Entry<Client,Integer> res : nb.entrySet()){
+
+
+                ol.add(new ClientTable(res.getKey(), res.getValue()));
+            }
+
 
 
             TableColumn idNameCol = new TableColumn("ID");
@@ -66,12 +81,15 @@ public class StatsController {
             TableColumn soldeCol = new TableColumn("Solde");
             TableColumn commandeCol = new TableColumn("Nb Commande");
             TableColumn adrrCol = new TableColumn("Adresse");
+
             list_clients.getColumns().addAll(idNameCol, firstNameCol,lastNameCol,soldeCol,commandeCol,adrrCol);
 
-            idNameCol.setCellValueFactory(new PropertyValueFactory<Client,String>("id"));
-            firstNameCol.setCellValueFactory(new PropertyValueFactory<Client,String>("nom"));
-            lastNameCol.setCellValueFactory(new PropertyValueFactory<Client,String>("prenom"));
-            soldeCol.setCellValueFactory(new PropertyValueFactory<Client,String>("solde"));
+            idNameCol.setCellValueFactory(new PropertyValueFactory<ClientTable,Integer>("id"));
+            firstNameCol.setCellValueFactory(new PropertyValueFactory<ClientTable,String>("nom"));
+            lastNameCol.setCellValueFactory(new PropertyValueFactory<ClientTable,String>("prenom"));
+            soldeCol.setCellValueFactory(new PropertyValueFactory<ClientTable,Double>("solde"));
+            commandeCol.setCellValueFactory(new PropertyValueFactory<ClientTable,Integer>("nbCommande"));
+            adrrCol.setCellValueFactory(new PropertyValueFactory<ClientTable, String>("adresseTable"));
 
             list_clients.setItems(ol);
         }catch (Exception e){
@@ -80,5 +98,35 @@ public class StatsController {
 
     }
 
+    protected class ClientTable extends Client{
 
+        private IntegerProperty nbCommande;
+        private StringProperty adresseTable;
+
+        private ClientTable(Client client,int nbCommande){
+            super(client.getId(),client.getNom(),client.getPrenom(),client.getSolde(),client.getAdresse());
+            this.nbCommande = new SimpleIntegerProperty(nbCommande);
+            this.adresseTable = new SimpleStringProperty(getAdresse().toString());
+
+        }
+        IntegerProperty nbCommandeProperty(){
+            return nbCommande;
+        }
+
+        public int getNbCommande() {
+            return nbCommande.get();
+        }
+
+        public String getAdresseTable() {
+            return adresseTable.get();
+        }
+
+        StringProperty adresseTable(){
+            return adresseTable;
+        }
+    }
 }
+
+
+
+
