@@ -40,35 +40,9 @@ public interface ClientDAO {
 	 */
 	public abstract boolean delete(Client obj) throws SQLException;
 	
-//	// Retourne le meilleur Client (nombre commande)
-//    public static int meilleurClient(Statement stmt) throws SQLException {
-//		// requête sql
-//		String req = "SELECT * " + 
-//				"FROM (" + 
-//				" SELECT l.id_client nbCommande" + 
-//				" FROM Livraison l" + 
-//				" GROUP BY l.id_client" + 
-//				") as x " + 
-//				"WHERE x.nbCommande = (" + 
-//				" SELECT MAX(nbCommande)" + 
-//				" FROM (" + 
-//				" SELECT m.id_client, COUNT(m.id_client) nbCommande" + 
-//				" FROM Livraison m" + 
-//				" GROUP BY m.id_client" + 
-//				" ) as y" + 
-//				")";
-//
-//		// émet une requête de type Select
-//		ResultSet result = stmt.executeQuery(req);
-//
-//		// obtient le nombre de colonnes en résultat
-//		ResultSetMetaData rsmd = result.getMetaData();
-//		int n = rsmd.getColumnCount();
-//
-//		// affiche les lignes/colonnes du résultat
-//		// (result.next() permet de passer à la ligne de résultat suivant)
-//		result.next();
-//		
-//		return result.getInt(n);
-//    }
+	/**
+	 * Permet de récupérer un objet Client ayant le plus grand nombre de commande
+	 * @param obj
+	 */
+	public abstract Client findBest() throws SQLException;
 }
